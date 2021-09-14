@@ -28,10 +28,13 @@ button {
 input, textarea {
 	outline: none;
 }
+/* index */
 #header {
-	position: relative;
-	width: 1500px;
+	position: fixed;
+	width: 100%;
 	height: 100px;
+	z-index: 999;
+	background-color: #ffffff;
 }
 #header img {
 	width: 400px;
@@ -100,8 +103,10 @@ input, textarea {
 }
 
 #main {
+	position: relative;
 	background-color: #e2cb05;
 	height: 70%;
+	top: 100px;
 }
 #main .video {
 	display: flex;
@@ -113,11 +118,17 @@ input, textarea {
 	
 }
 #footer {
-	position: relative;
+	position: absolute;
 	width: 100%;
-	height: 20%;
+	height: 95px;
+	bottom: 0;
+}
+#footer .F_container {
+	position: fixed;
 	background-color: #88d9c3;
-	overflow: hidden;
+	width: 100%;
+	height: 95px;
+	bottom: 0;
 }
 #footer .left {
 	position: absolute;
@@ -127,13 +138,13 @@ input, textarea {
 
 }
 #footer .left img {
-	height: 90%;
+	height: 100%;
 
 }
 #footer .right {
 	display: inline-block;
 	width: 100%;
-	margin-top: 30px;
+	margin-top: 10px;
 }
 #footer .right .right_top {
 	text-align: right;
@@ -184,3 +195,93 @@ input, textarea {
 #footer .right .right_bottom ul li:nth-child(3):before {
 	content: none;
 }
+
+
+/* about */
+
+.about_bg {
+	position: relative;
+	background-color: #ffffff;
+	width: 100%;
+	height: 100%;
+}
+.nav {
+	position: fixed;
+	width: 100%;
+	height: 100px;
+	background-color: #e2cb05;
+	z-index: 10;
+}
+.nav .nav_left {
+	display: inline-block;
+	width: 350px;
+	height: 100px;
+
+}
+.nav .nav_left p {
+	font-size: 33px;
+	padding: 30px 28px 25px 135px;
+}
+.nav .nav_left p:after {
+	display: inline-block;
+	content: '';
+	width: 3px;
+	height: 28px;
+	background-color: #000;
+	vertical-align: -3px;
+
+	margin-left: 55px;
+}
+.nav .nav_right {
+	position: absolute;
+	display: inline-block;
+	width: 800px;
+	height: 100px;
+	top: 40px;
+}
+.nav .nav_right ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	margin-left: 50px;
+}
+.nav .nav_right ul li {
+	padding-right: 100px;
+}
+.nav .nav_right ul li a {
+	font-size: 20px;
+	color: #f2f2f2;
+}
+.nav .nav_right ul li a.active {
+	color: #000000;
+}
+.nav .nav_right ul li a:hover {
+	color: #000000;
+}
+.about_bg .A_YTY {
+	position: fixed;
+	top: 200px;
+	bottom: 95px;
+	width: 100%;
+}
+.about_bg .A_YTY img {
+	width: 100%;
+	height: 100%;
+}
+.about_bg .A_SCHE {
+	position: fixed;
+	top: 200px;
+	bottom: 95px;
+	width: 100%;	
+}
+
+.about_bg .A_SCHE iframe {
+	position: absolute;
+	top: 3px;
+	width: 100%;
+	height: 100%;
+    padding: 0 350px;
+}
+
+
