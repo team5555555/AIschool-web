@@ -1,0 +1,252 @@
+* {
+	margin: 0;
+	padding: 0;
+
+	box-sizing: border-box;
+	/*font-family: 'Noto Sans KR', 'Nanum Gothic', sans-serif;*/ /* 폰트 왼쪽부터 지원하면 적용 */
+}
+
+/*
+html, body {
+	height: 100%;
+	margin: 0;
+}
+*/
+
+ol, ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+img {
+	vertical-align: middle;
+}
+
+button {
+	border: none;
+}
+
+input, textarea {
+	outline: none;
+}
+
+/* 중앙_flim contents 편집하며 생긴 요소 */
+
+
+
+
+p {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+span {
+	font-size: 7pt;
+}
+
+/* 상단 */
+/* 새로고친 부분 */
+
+#header {
+    position: fixed;
+	display: contents;
+	width: 100%;
+	background-color: #fff;
+}
+
+
+.nav_container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 2000px;                
+}
+
+.logo {
+    display: inline-block;
+    padding: 20px 0px 0px 20px;
+    vertical-align: middle;
+}
+
+.nav_container .text_box {
+	margin-left: 100px;
+}
+
+.nav_container .text_box a:first-child {
+    padding-left: 40px;
+}
+
+.link_text {
+    display: inline-block;
+    padding: 10px 30px 10px 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.link_text p {
+	font-size: 25px;
+	font-weight: normal;
+}
+
+
+
+
+
+/*중앙*/
+/*text-box*/
+
+#flim_text_container {
+	height: 270px;
+	background-color: #f2cb05;
+}
+
+.col-dz {
+	display: flex;
+	justify-content: center;
+}
+#flim_center{
+	margin: 40px;
+}
+
+.text-table .text_box p {
+	margin-top: 50px;
+}
+
+/*main_flim-contents*/
+
+#flim_container{
+	padding: 0;
+}
+
+.flim_wrap {
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	margin: 15px 0 15px 0;
+}
+
+.flim_table {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	height: 100%;
+}
+
+.item_flim {
+	border-radius: 0px;
+	display: table-cell;
+	vertical-align: top;
+}
+
+.item_flim .item_container {
+	position: relative;
+}
+
+.text_wrap {
+	background: transparent;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    width: 100%;
+    
+    vertical-align: middle;
+    height: 100%;
+}
+
+
+.item_flim{
+	padding-left: 180px;
+	margin-right: -100px;
+}
+
+
+
+
+/*하단*/
+
+#footer {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;	
+	outline: 0;
+	background: transparent;
+	
+}
+#footer .F_container {
+	background-color: #88d9c3;
+	width: 100%;
+	height: 100%;
+	
+}
+#footer .left {
+	position: absolute;
+	display: inline-block;
+	height: 100%;
+	margin-left: 50px;
+
+}
+#footer .left img {
+	height: 100%;
+
+}
+#footer .right {
+	display: inline-block;
+	width: 100%;
+	/*height: 120px;*/
+	
+}
+#footer .right .right_top {
+	text-align: right;
+    margin-left: 54%;
+    margin-right: 20px;
+}
+
+#footer .right .right_top ul li {
+	display: inline-block;
+}
+#footer .right .right_top ul li:before {
+	display: inline-block;
+	content: '';
+	width: 1px;
+	height: 15px;
+	background-color: #000;
+	margin: 0 8px;
+	vertical-align: -3px;
+}
+#footer .right .right_top ul li:nth-child(1):before,
+#footer .right .right_top ul li:nth-child(5):before {
+	content: none;
+}
+#footer .right .right_bottom {
+	text-align: right;
+    margin-left: 54%;
+    margin-right: 20px;
+}
+
+#footer .right .right_bottom ul li {
+	display: inline-block;
+}
+
+
+#footer .right .right_bottom ul li:before {
+	display: inline-block;
+	content: '';
+	width: 1px;
+	height: 15px;
+	background-color: #000;
+	margin: 0 8px;
+	vertical-align: -3px;
+}
+#footer .right .right_bottom ul li:nth-child(1):before,
+#footer .right .right_bottom ul li:nth-child(3):before {
+	content: none;}
+
+
