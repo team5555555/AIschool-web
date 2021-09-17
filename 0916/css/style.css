@@ -28,6 +28,7 @@ button {
 input, textarea {
 	outline: none;
 }
+
 /* index */
 #header {
 	position: fixed;
@@ -98,9 +99,7 @@ input, textarea {
 #header .lists .menu li {
 	padding-right: 90px;
 }
-#header .lists .menu li a {
 
-}
 
 #main {
 	width: 100%;
@@ -150,9 +149,7 @@ input, textarea {
     margin-left: 54%;
     margin-right: 20px;
 }
-#footer .right .right_top ul {
 
-}
 #footer .right .right_top ul li {
 	display: inline-block;
 }
@@ -174,9 +171,7 @@ input, textarea {
     margin-left: 54%;
     margin-right: 20px;
 }
-#footer .right .right_bottom ul {
 
-}
 #footer .right .right_bottom ul li {
 
 	display: inline-block;
@@ -321,9 +316,7 @@ input, textarea {
     color: #000000;
     padding: 0 44px;
 }
-.c_menu ul li a:hover {
 
-}
 .c_main {
 	position: relative;
 	margin: 0 20%;
@@ -334,6 +327,3 @@ input, textarea {
     width: 100%;
     height: 405px;
 }
-
-
-
