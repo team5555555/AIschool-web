@@ -8,7 +8,7 @@
 html, body {
 	margin: 0;
 	padding: 0;
-	overflow-x: hidden;
+
 }
 ol, ul {
 	list-style: none;
@@ -52,8 +52,10 @@ input, textarea {
 #header .lists {
 	position: absolute;
 	display: inline-block;
-	width: 900px;
-	padding-top: 52px;
+	width: 2000px;
+	padding-top: 60px;
+	padding-bottom: 17px;
+	background-color: #ffffff;
 }
 #header .lists .menu {
 	position: relative;
@@ -416,11 +418,11 @@ input, textarea {
     margin-top: 90px;
 }
 .p_container {
-	position: relative;
+	display: flex;
+	justify-content: space-around;
     width: 100%;
     height: 100%;
     padding-top: 105px;
-	margin-left: 12%;
 }
 
 /* photo contents */
@@ -436,13 +438,6 @@ input, textarea {
 .item .item_container img {
     margin: 0 auto;
 }
-
-/*sami_footer*/
-#sami_footer {
-    color: white;
-    margin: 1px 0px 0px 0px;
-}
-
 
 /* 예상견적 */
 
