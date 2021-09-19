@@ -127,7 +127,7 @@ span {
 
 #flim_text_container {
 	height: 270px;
-	background-color: #f2cb05;
+	background-color: #f2cb05; 
 }
 
 .col-dz {
@@ -202,7 +202,6 @@ span {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	vertical-align: baseline;
 	outline: 0;
 	background: transparent;
 	
