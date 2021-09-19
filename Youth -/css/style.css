@@ -34,10 +34,13 @@ button {
 input, textarea {
 	outline: none;
 }
+
+
+
 /* index */
 #header {
 	position: fixed;
-	width: 100%;
+	width: 1024px;
 	height: 100px;
 	z-index: 999;
 	background-color: #ffffff;
