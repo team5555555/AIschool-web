@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Youth</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/hover.css">
+	<link rel="stylesheet" type="text/css" href="css/estimates.css">
+
+<script type="text/javascript">
+ 
+function moveCursor(textbox){
+ 
+ if(textbox.value.length == 3){
+ document.getElementById("input2").focus();
+ }
+ 
+if(textbox.value.length == 4){
+ document.getElementById("input3").focus();
+ }
+
+ 
+}
+
+</script>
+<script type="text/javascript">
+
+    function alert123(num) {
+
+
+
+        if(isFinite(num.value) == false) {
+            alert("전화번호는 숫자만 입력할 수 있습니다.");
+            num.value = "";
+            return false;
+        }
+
+    }
+
+</script>
+
+
+
+
+</head>
+<body>
+
+	<header id="header">
+		<img src="img/logo_E_2.jpg">
+		<div class="lists">
+			<ul class="menu">
+				<li><a href="#" class="hvr-underline-from-center pop">About</a>
+					<ul class="sub_menu">
+						<li><a href="#" class="hvr-grow">YOUTH the YOUTH</a></li>
+						<li><a href="#" class="hvr-grow">SOLUTION</a></li>
+						<li><a href="#" class="hvr-grow">SCHEDULE</a></li>
+					</ul>
+				</li>
+				<li><a href="#" class="hvr-underline-from-center">Photography</a></li>
+				<li><a href="#" class="hvr-underline-from-center">Film</a></li>
+				<li><a href="#" class="hvr-underline-from-center">예상견적</a></li>
+				<li><a href="#" class="hvr-underline-from-center">견적문의</a></li>
+				<li><a href="#" class="hvr-underline-from-center">Contect</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<main role="main" id="main">
+		<div class="main-top">
+			<div>
+				<div class="question">
+					<h2>견적문의</h2>
+				</div>		
+			</div>	
+		</div>	
+
+
+
+
+	    <div class="box-wrap">
+			<div class="box-wrap-top">
+				<div class="box-wrap-top-name">
+		   			<h4>NAME</h4>
+					<input type="text" name="" id="" placeholder=" 이름/업체명을 입력해주세요." style="border: 3px solid #88D9C3";  autofocus >
+				</div>
+
+				<div class="box-wrap-top-e-mail">
+					<h4>E-mail</h4>
+					<input type="email" name="" id="" placeholder="" style="border: 3px solid #88D9C3;">
+				</div>	                
+			</div>
+
+			<div class="box-wrap-middle">
+	 			<h4>PHONE</h4>
+	 			<div class="phone-box">	
+					<input type="text" name="input1" id="input1" placeholder="" size="3" maxlength="3" onkeyup="moveCursor(this)" onkeypress="alert123(this);" style="border: 3px solid #88D9C3"; >
+
+					<hr  class="line1" style="border: solid 2px #88D9C3; width: 50px;">
+
+					<input type="text" name="input2" id="input2" placeholder="" size="4" maxlength="4" onkeyup="moveCursor(this)"  onkeypress="alert123(this);" style="border: 3px solid #88D9C3;" >
+
+					<hr class="line2" style="border: solid 2px #88D9C3; width: 50px;">
+
+					<input type="text" name="input3" id="input3" placeholder="" size="4" maxlength="4" style="border: 3px solid #88D9C3;" >
+				</div>
+			</div>
+
+			<div class="box-wrap-bottom">
+	 			<h4>MESSAGE</h4>
+	 			<textarea  class="message-box" name="message" cols="40" rows="5" placeholder=" 문의 사항을 남겨주세요." style="border: solid 3px #88D9C3;" style="resize: none;"></textarea>
+			</div>
+
+
+
+			<form class="checkbox">
+				<input type="checkbox" name="agree" value="">    개인정보 수집 및 이용에 동의합니다.  
+			</form>
+
+			<div class="view">
+				<a href="">자세히 보기</a>
+			</div>
+
+			<div class="submit">
+				<input type="submit" value="견적 및 상담 접수">
+			</div>
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</main>
+
+
+
+
+
+
+
+
+
+	<footer id="footer">
+
+		<div class="right">
+			
+			<div class="right_top">
+				<ul>
+					<li>유스더유스</li>
+					<li>대표자명 : 김태완</li>
+					<li>사업자등록번호 : <a href="https://www.ftc.go.kr">687-51-00454</a></li>
+					<li>통신판매업번호 : 2020-</li>
+					<li>충남부여-0004</li>
+				</ul>
+			</div>
+			<div class="right_bottom">
+				<ul>
+					<li>충청남도 부여군 부여읍 사비로 12번길 6-28 204호 (우 : 33167)</li>
+					<li>e-mail : six6200@naver.com</li>
+					<li>&copy; 2021 유스더유스 .All rights reserved.</li>
+				</ul>
+			</div>
+		</div>
+		
+
+
+	</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
