@@ -206,7 +206,7 @@
 		display: flex;
     	/*flex-direction: row;*/
     	flex-wrap: wrap !important; 
-    	justify-content: space-around;
+    	justify-content: flex-start !important;
     	align-items: center;
     	align-content: stretch;
     	margin-bottom: 10px;
@@ -214,11 +214,12 @@
 	}
 
 	.box-wrap .box-wrap-top input {
-		width: 95%;
+		width: 100%;
     	height: 50px;
     	margin-top: 5px;
     	font-size: 20px;
     	padding-left: 20px;
+    	padding-right: 60px;
 	}
 	.box-wrap .box-wrap-middle {
 		padding-left: 10px;
@@ -230,7 +231,7 @@
     	margin-top: 5px;
     	font-size: 20px;
     	text-align: center;
-    	padding-right: 15px;
+    	/*padding-right: 15px;*/
 	}
 	.box-wrap .box-wrap-middle input {
 		width: 100%;

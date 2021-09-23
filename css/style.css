@@ -109,7 +109,9 @@ input, textarea {
 #header .lists .menu li {
 	padding-right: 90px;
 }
-
+#header .lists .menu li a {
+	font-family: 'NIXGON', sans-serif;
+}
 
 #main {
 	width: 100%;
@@ -183,7 +185,6 @@ input, textarea {
 }
 
 #footer .right .right_bottom ul li {
-
 	display: inline-block;
 }
 #footer .right .right_bottom ul li:before {
@@ -225,6 +226,7 @@ input, textarea {
 .nav .nav_left p {
 	font-size: 33px;
 	padding: 30px 28px 25px 135px;
+	font-family: 'NIXGON', sans-serif;
 }
 .nav .nav_left p:after {
 	display: inline-block;
@@ -256,6 +258,7 @@ input, textarea {
 .nav .nav_right ul li a {
 	font-size: 20px;
 	color: #f2f2f2;
+	font-family: 'NIXGON', sans-serif;
 }
 .nav .nav_right ul li a.active {
 	color: #000000;
@@ -297,6 +300,7 @@ input, textarea {
 	font-size: 30px;
 	text-align: center;
     padding-top: 35px;
+    font-family: 'Youth', 'NIXGON', sans-serif;
 }
 
 /* 예상견적 */
