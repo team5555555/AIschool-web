@@ -15,36 +15,6 @@
 	<link rel="stylesheet" type="text/css" href="css/hover.css">
 	<link rel="stylesheet" type="text/css" href="css/mobile.css">
 
-<!-- java area : mail send-->      
-	<script type="text/javascript"
-	src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  
-  <script type="text/javascript">
-	emailjs.init('user_3D4tbF2lMch8UFW79VCNs')
-
-	const btn = document.getElementById('button');
-
-	document.getElementById('form')
-	.addEventListener('submit', function(event) {
-	event.preventDefault();
-
-	 btn.value = 'Sending...';
-
-	const serviceID = 'default_service';
-	const templateID = 'template_oq55vqm';
-
-	emailjs.sendForm(serviceID, templateID, this)
-	.then(() => {
-				  btn.value = '견적 및 상담 접수';
-				  alert('Sent!');
-				}, (err) => {
-  btn.value = '견적 및 상담 접수';
-  alert(JSON.stringify(err));
-});
-});
-
-
-  </script>
 
 
 <!-- java area : 자동탭 기능-->
@@ -183,9 +153,6 @@
 
 
 
-
-
-
 	<footer id="footer">
 	    <div class="F_container">
 	        
@@ -231,6 +198,37 @@
 			}
 		}
 	</style>
+
+	<!-- java area : mail send-->      
+	<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  
+  <script type="text/javascript">
+	emailjs.init('user_3D4tbF2lMch8UFW79VCNs')
+
+	const btn = document.getElementById('button');
+
+	document.getElementById('form')
+	.addEventListener('submit', function(event) {
+	event.preventDefault();
+
+	 btn.value = 'Sending...';
+
+	const serviceID = 'default_service';
+	const templateID = 'template_oq55vqm';
+
+	emailjs.sendForm(serviceID, templateID, this)
+	.then(() => {
+				  btn.value = '견적 및 상담 접수';
+				  alert('Sent!');
+				}, (err) => {
+  btn.value = '견적 및 상담 접수';
+  alert(JSON.stringify(err));
+});
+});
+
+
+  </script>
 
 
 
