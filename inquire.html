@@ -11,64 +11,78 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-	<link rel="stylesheet" type="text/css" href="css/font.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/hover.css">
-	<!-- <link rel="stylesheet" type="text/css" href="css/estimates.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/mobile.css">
 
+<!-- java area : mail send-->      
+	<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  
+  <script type="text/javascript">
+	emailjs.init('user_3D4tbF2lMch8UFW79VCNs')
+
+	const btn = document.getElementById('button');
+
+	document.getElementById('form')
+	.addEventListener('submit', function(event) {
+	event.preventDefault();
+
+	 btn.value = 'Sending...';
+
+	const serviceID = 'default_service';
+	const templateID = 'template_oq55vqm';
+
+	emailjs.sendForm(serviceID, templateID, this)
+	.then(() => {
+				  btn.value = '견적 및 상담 접수';
+				  alert('Sent!');
+				}, (err) => {
+  btn.value = '견적 및 상담 접수';
+  alert(JSON.stringify(err));
+});
+});
 
 
-<script type="text/javascript">
- 
-function moveCursor(textbox){
- 
- if(textbox.value.length == 3){
- document.getElementById("input2").focus();
- }
- 
-if(textbox.value.length == 4){
- document.getElementById("input3").focus();
- }
-
- 
-}
-
-</script>
-<script type="text/javascript">
-
-    function alert123(num) {
+  </script>
 
 
+<!-- java area : 자동탭 기능-->
+    <script type="text/javascript">
 
-        if(isFinite(num.value) == false) {
-            alert("전화번호는 숫자만 입력할 수 있습니다.");
-            num.value = "";
-            return false;
+        function moveCursor(textbox){
+
+            if(textbox.value.length == 3){
+             document.getElementById("input2").focus();
+            }
+
+            if(textbox.value.length == 4){
+             document.getElementById("input3").focus();
+            }
+
+
         }
-
-    }
-
 </script>
 
-<script type="text/javascript"> 
-	function loaded(){  
-		var element = document.getElementById('loading');  
-			element.parentNode.removeChild(element); 
-	} 
-	if (window.addEventListener){  
- 		window.addEventListener('load', loaded, false);      
-		}else {  
- 	window.attachEvent('onload', loaded); 
-	} 
-</script>
+    <script type="text/javascript">
 
+        function alert123(num) {
+
+
+	        if(isFinite(num.value) == false) {
+		       alert("전화번호는 숫자만 입력할 수 있습니다.");
+		       num.value = "";
+		       return false;
+	        }
+
+        } 
+    </script>
 
 </head>
+
+
 <body>
-<div id="loading"> 
-	<img src="img/loading.gif">
-</div>
+
 	<header id="header">
 		<a href="index.html"><img src="img/logo_E_2.jpg"></a>
 		<div class="lists">
@@ -99,78 +113,68 @@ if(textbox.value.length == 4){
 
 
 
-	    <div class="box-wrap">
-			<div class="box-wrap-top">
-				<div class="box-wrap-top-name">
-		   			<h4>NAME</h4>
-					<input type="text" name="" id="" placeholder="이름/업체명을 입력해주세요." style="border: 3px solid #88D9C3";  autofocus >
+	    <div id="form_box">
+			<form id="form">
+		<!--이름 & 이메일-->
+			  <div id="name_email">
+		
+				<div class="name field">
+				  <label for="from_name">NAME</label>
+				  <input type="text" name="from_name" id="from_name"  placeholder="이름/업체명을 입력해주세요." style="border: 3px solid #88D9C3;">
 				</div>
-
-				<div class="box-wrap-top-e-mail">
-					<h4>E-mail</h4>
-					<input type="email" name="" id="" placeholder="E-mail을 입력해주세요" style="border: 3px solid #88D9C3;">
-				</div>	                
-			</div>
-
-			<div class="box-wrap-middle">
-	 			<h4>PHONE</h4>
-	 			<div class="phone-box">	
-					<input type="text" name="input1" id="input1" placeholder="" size="3" maxlength="3" onkeyup="moveCursor(this)" onkeypress="alert123(this);" style="border: 3px solid #88D9C3"; >
-
-					<hr  class="line1" style="border: solid 1px #88D9C3; width: 50px;">
-
-					<input type="text" name="input2" id="input2" placeholder="" size="4" maxlength="4" onkeyup="moveCursor(this)"  onkeypress="alert123(this);" style="border: 3px solid #88D9C3;" >
-
-					<hr class="line2" style="border: solid 1px #88D9C3; width: 50px;">
-
-					<input type="text" name="input3" id="input3" placeholder="" size="4" maxlength="4" style="border: 3px solid #88D9C3;" >
+		
+				<div id="e-mail" class="field">
+				  <label for="from_name">E-mail</label>
+				  <input type="text" name="from_name" id="from_name" placeholder="E-mail을 입력해주세요" style="border: 3px solid #88D9C3;">
 				</div>
-			</div>
-
-			<div class="box-wrap-bottom">
-	 			<h4>MESSAGE</h4>
-	 			<textarea  class="message-box" name="message" cols="40" rows="5" placeholder="문의 사항을 남겨주세요." style="border: solid 3px #88D9C3;" style="resize: none;"></textarea>
-			</div>
-
-
-
-			<form class="checkbox">
-				<input type="checkbox" name="agree" value="">    개인정보 수집 및 이용에 동의합니다.  
+		
+			  </div>  
+		
+		<!--전화번호-->        
+				<div id="phone" class="field">
+		
+				  <label for="to_name" class="text_phone">PHONE</label>
+		
+				  <div class="phone_number_container">
+			  <!-- blank 1 -->
+				  <input type="text" name="to_name" id="input1" class="phone_input_1" size="4" maxlength="4" 
+				  onkeyup="moveCursor(this)"  onkeypress="alert123(this);" style="border: 3px solid #88D9C3;">
+				  <hr  class="line1" style="border: solid 1px #88D9C3; width: 50px;">
+			  <!-- blank 2 -->
+				  <input type="text" name="to_name" id="input2" class="phone_input_2" size="4" maxlength="4" 
+				  onkeyup="moveCursor(this)"  onkeypress="alert123(this);" style="border: 3px solid #88D9C3;">
+				  <hr  class="line1" style="border: solid 1px #88D9C3; width: 50px;">
+			  <!-- blank 3 -->          
+				  <input type="text" name="to_name" id="input3" class="phone_input_3"  size="4" maxlength="4"  
+				  onkeyup="moveCursor(this)"  onkeypress="alert123(this);" style="border: 3px solid #88D9C3;">
+				  
+				  </div>
+				</div>
+		
+		<!-- 문의사항 -->
+				<div id="message" class="field">
+				  <label for="message">MESSAGE</label>
+				  <textarea type="text" name="message" id="write_message"  placeholder="문의 사항을 남겨주세요."
+				   style="border: solid 3px #88D9C3;" cols="40" rows="5"></textarea> 
+				</div>
+		
+		<!--전송 버튼-->        
+				<input type="submit" id="button" value="견적 및 상담 접수" >
 			</form>
-
+		
+		
+		
+		<!--개인정보 수집-->
+			<form class="checkbox">
+			  <input type="checkbox" name="agree" value="">   개인정보 수집 및 이용에 동의합니다.  
+			</form>
+		
 			<div class="view">
-				<a href="">자세히 보기</a>
+			  <a href="#">자세히 보기</a>
 			</div>
-
-			<div class="submit">
-				<input type="submit" value="견적 및 상담 접수">
+		
 			</div>
-
-		</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		
 
 	</main>
 
