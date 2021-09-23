@@ -114,7 +114,7 @@ input, textarea {
 #main {
 	width: 100%;
     position: relative;
-    /*background-color: #e2cb05;*/
+    /*background-color: #f2cb05;*/
     padding-top: 100px;
 }
 #main h4{
@@ -213,7 +213,7 @@ input, textarea {
 	position: fixed;
 	width: 100%;
 	height: 100px;
-	background-color: #e2cb05;
+	background-color: #f2cb05;
 	z-index: 10;
 }
 .nav .nav_left {
@@ -290,7 +290,7 @@ input, textarea {
 	position: fixed;
 	width: 100%;
 	height: 100px;
-	background-color: #e2cb05;
+	background-color: #f2cb05;
 	z-index: 10;
 }
 #main .contact p {

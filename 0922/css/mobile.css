@@ -1,4 +1,4 @@
-@media (max-width: 767px) {
+@media (max-width: 420px) {
 
 	/* index */
 	#header {
@@ -17,11 +17,12 @@
     	padding: 0 10px;
 	}
 	#header .lists {
-	    position: relative;
+	    position: absolute;
 	    display: inline-block;
 	    width: 100%;
 	    padding-top: 0;
 	    padding-bottom: 0;
+		top: 68px;
 	}
 	#header .lists .menu {
 		display: flex;
@@ -52,10 +53,10 @@
 		width: 100%;
 	}
 	#footer {
-		height: 150px;
+		/*height: 150px;*/
 	}
 	#footer .F_container {
-		height: 150px;
+		/*height: 150px;*/
 	}
 	#footer .left {
 		display: none;
@@ -65,6 +66,7 @@
 	}
 	#footer .right {
 		margin: 0 auto;
+		background-color: #88d9c3;
 	}
 	#footer .right .right_top {
 		margin: 0 auto;

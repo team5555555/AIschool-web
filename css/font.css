@@ -1,0 +1,18 @@
+@font-face {
+	font-family:'NIXGON';
+	font-style: normal;
+	font-weight: normal;
+	src:url(../fonts/NIXGONFONTS M 2.0.ttf) format('truetype'),
+		url(../fonts/NIXGONFONTS M 2.0.eot),
+		url(../fonts/NIXGONFONTS M 2.0.woff2)format('woff2'),
+		url(../fonts/NIXGONM-Vb.woff) format('woff');
+}
+@font-face {
+	font-family:'Youth';
+	font-style: normal;
+	font-weight: 800;
+	src:url(../fonts/Youth.ttf) format('truetype'),
+		url(../fonts/Youth.eot),
+		url(../fonts/Youth.woff2) format('woff2'),
+		url(../fonts/Youth.woff) format('woff');
+}
