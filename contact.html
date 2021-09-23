@@ -9,14 +9,29 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<link rel="stylesheet" type="text/css" href="css/font.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/hover.css">
 	<link rel="stylesheet" type="text/css" href="css/mobile.css">
 
+	<script type="text/javascript"> 
+		function loaded(){  
+  		var element = document.getElementById('loading'); // 로딩 요소 
+  			element.parentNode.removeChild(element); // 요소 제거 
+		} 
+		// 로딩 이벤트에 등록 
+		if (window.addEventListener){  
+     		window.addEventListener('load', loaded, false);      
+   		}else {  
+     	window.attachEvent('onload', loaded); 
+		} 
+	</script>
 
 </head>
 <body>
-
+<div id="loading"> 
+	<img src="img/loading.gif">
+</div>
 	<header id="header">
 		<a href="index.html"><img src="img/logo_E_2.jpg"></a>
 		<div class="lists">
