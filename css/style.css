@@ -132,7 +132,13 @@ input, textarea {
 #main .video_container {
 	position: relative;
     width: 100%;
-    height: 1080px;
+    height: 100%;
+}
+/*#main .video_container .main_visual iframe {*/
+	height: 900px;
+}
+#video {
+	width: 100% !important;
 }
 #footer {
 	display: block;

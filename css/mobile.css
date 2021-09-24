@@ -1,4 +1,7 @@
 @media (max-width: 420px) {
+	#loading {
+		display: none;
+	}
 
 	/* index */
 	#header {
