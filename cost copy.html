@@ -1294,10 +1294,12 @@
       if (step4_3[0] === 1) {
         tempStr3 += "기획 및 콘티 제작";
         tempStr3Cost += 800000;
-      } else if (step4_3[1] === 1) {
+      }
+      if (step4_3[1] === 1) {
         tempStr3 += "배우 / 성우 섭외";
-        tempStr2Cost += 900000;
-      } else if (step4_3[2] === 1) {
+        tempStr3Cost += 900000;
+      }
+      if (step4_3[2] === 1) {
         tempStr3 += "헤어 메이크업";
         tempStr3Cost += 900000;
       }
@@ -1374,6 +1376,7 @@
           console.log(currentIdx);
 
           if (currentIdx === 3) {
+            console.log($step_four);
             $step_four.push(MakeCostNode4_4());
             step4_costFlag = true;
           }
