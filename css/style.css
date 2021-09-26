@@ -1,15 +1,10 @@
 * {
 	margin: 0;
 	padding: 0;
-
 	box-sizing: border-box;
 	/*font-family: 'Noto Sans KR', 'Nanum Gothic', sans-serif;*/ /* 폰트 왼쪽부터 지원하면 적용 */
 }
-html, body {
-	margin: 0;
-	padding: 0;
 
-}
 ol, ul {
 	list-style: none;
 }
@@ -134,9 +129,10 @@ input, textarea {
     width: 100%;
     height: 100%;
 }
-/*#main .video_container .main_visual iframe {*/
+/*#main .video_container .main_visual iframe {
 	height: 900px;
 }
+*/
 #video {
 	width: 100% !important;
 }
@@ -377,9 +373,7 @@ input, textarea {
 
 /*main_flim-contents*/
 
-/*#flim_container{
-	
-}*/
+
 
 .flim_wrap {
 	position: relative;
@@ -407,6 +401,7 @@ input, textarea {
 }
 
 .text_wrap {
+	display: table;
 	background: transparent;
 	padding-left: 0 !important;
 	padding-right: 0 !important;
@@ -418,10 +413,11 @@ input, textarea {
     height: 100%;
 }
 
+.text_wrap p {
+	font-size: 15px;
+}
 
-/*.item_flim{
-	
-}*/
+
 
 /* photo */
 
