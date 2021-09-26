@@ -166,6 +166,58 @@
       justify-content: center;
       align-items: center;
     }
+
+    #step2-2 > div {
+      margin-top: 8em;
+      display: flex;
+      flex: 1;
+    }
+    #step2-2 > div > div {
+      margin-left: 2em;
+      margin-right: 2em;
+    }
+    #step2-2 > div > div:nth-child(1),
+    #step2-2 > div > div:nth-child(2) {
+      padding-right: 2em;
+      border-right: 2.5px solid black;
+    }
+    #step2-3 div:nth-child(2) {
+      display: flex;
+    }
+    #step2-3 #_O div {
+      font-size: 10rem;
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+    #step2-3 #_X div {
+      font-size: 10rem;
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+    #_O,
+    #_X {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #_O input,
+    #_X input {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    #step2-3 > div:nth-child(3) {
+      margin-top: 3rem;
+    }
+    #step2-3 > div:nth-child(1) {
+      text-align: center;
+    }
+    #step2-3 > div:nth-child(3) > input {
+      margin-left: 6rem;
+      width: 3em;
+      height: 1.5em;
+      outline: none;
+    }
   </style>
   <body>
     <header id="header">
@@ -331,6 +383,20 @@
                 </div>
               </div>
             </div>
+            <div id="step2-3">
+              <div>단체사진 촬영여부</div>
+              <div>
+                <div id="_O">
+                  <div>O</div>
+                  <input type="checkbox" name="O" id="" />
+                </div>
+                <div id="_X">
+                  <div>X</div>
+                  <input type="checkbox" name="X" id="" />
+                </div>
+              </div>
+              <div><input type="number" name="" id="" />장</div>
+            </div>
             <div id="step3-1">
               <img
                 src="https://drive.google.com/uc?export=download&id=1ET9-vuKf_G8VFPFMBu6xuh_zbbFqm5GJ"
@@ -392,6 +458,7 @@
     let step1_3 = "";
 
     let step2_1 = 0;
+    let step2_2 = { buyeo: false, chungNam: false, else: false };
     let currentPhase = phase[0];
     let currentStep = stepSeires[1];
     let flag = true;
@@ -554,6 +621,33 @@
     $step_two[0]
       .querySelector("input")
       .addEventListener("change", onChangeInput);
+
+    // step 2-2
+    const onChangeChk2_2 = (e) => {
+      if (e.target.checked) {
+        if (e.target.name === "221") {
+          step2_2["buyeo"] = true;
+        } else if (e.target.name === "222") {
+          step2_2["chungNam"] = true;
+        } else {
+          step2_2["else"] = true;
+        }
+      } else {
+        if (e.target.name === "221") {
+          step2_2["buyeo"] = false;
+        } else if (e.target.name === "222") {
+          step2_2["chungNam"] = false;
+        } else {
+          step2_2["else"] = false;
+        }
+      }
+
+      console.log(step2_2);
+    };
+    console.log($step_two[1]);
+    $step_two[1].querySelectorAll("input").forEach(($step2_2) => {
+      $step2_2.addEventListener("change", onChangeChk2_2);
+    });
 
     //next Button
     const onClickNext = (e) => {
