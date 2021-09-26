@@ -461,6 +461,11 @@ input, textarea {
 
 /* 견적문의 */
 
+#main .about_bg  {
+	margin-bottom: 30px;
+
+}
+
 #form_box {
 	border: solid 3px #000000;
 	width: 800px;
@@ -518,7 +523,7 @@ input, textarea {
 	}
   
 		
-  /* input 디자인 */ 
+   /* input 디자인 */ 
 #name_email input {
 	width: 350px;
 	  height: 50px;
@@ -550,16 +555,10 @@ input[type="submit"] {
   }
   
   
-  /*전송버튼 및 개인정보수집 네모 위치*/
+   /*전송버튼 및 개인정보수집 네모 위치*/
   
 .checkbox {
-	  display: flex;
-	  flex-direction: row;
-	  flex-wrap: nowrap;
-	  justify-content: center;
-	  align-items: center;
-	  align-content: stretch;
-	  margin-bottom: 5px;
+	margin: 0px 0px 5px 250px;
     }
   
 #button {
@@ -570,4 +569,4 @@ input[type="submit"] {
    
   /* 자세히보기*/ 
 .view {
-	  margin: 0px 0px 0px 350px; }
+	 margin: 3px 0px 6px 350px }
