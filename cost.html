@@ -1,130 +1,1420 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="description" content="유스더유스 예상견적페이지">
-    <meta name="keywords" content="유스더유스, youththeyouth, youth the youth">
-    <meta name="author" content="유스더유스">
-	<title>Youth</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="유스더유스 예상견적페이지" />
+    <meta
+      name="keywords"
+      content="유스더유스, youththeyouth, youth the youth"
+    />
+    <meta name="author" content="유스더유스" />
+    <title>Youth</title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="stylesheet" type="text/css" href="css/font.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/hover.css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css">
+    <link rel="stylesheet" type="text/css" href="css/font.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/hover.css" />
+    <link rel="stylesheet" type="text/css" href="css/mobile.css" />
 
+    <script type="text/javascript">
+      function loaded() {
+        var element = document.getElementById("loading");
+        element.parentNode.removeChild(element);
+      }
 
-	<script type="text/javascript"> 
-		function loaded(){  
-  		var element = document.getElementById('loading');  
-  			element.parentNode.removeChild(element);  
-		} 
-		
-		if (window.addEventListener){  
-     		window.addEventListener('load', loaded, false);      
-   		}else {  
-     	window.attachEvent('onload', loaded); 
-		} 
-	</script>
+      if (window.addEventListener) {
+        window.addEventListener("load", loaded, false);
+      } else {
+        window.attachEvent("onload", loaded);
+      }
+    </script>
+  </head>
+  <style>
+    .c_m_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-</head>
-<body>
-<div id="loading"> 
-	<img src="img/loading.gif">
-</div>
-	<header id="header">
-		<a href="index.html"><img src="img/logo_E_2.jpg"></a>
-		<div class="lists">
-			<ul class="menu">
-				<li><a href="A_YTY.html" class="hvr-underline-from-center pop">About</a></li>
-				<li><a href="photo.html" class="hvr-underline-from-center">Photography</a></li>
-				<li><a href="film.html" class="hvr-underline-from-center">Film</a></li>
-				<li><a href="cost.html" class="hvr-underline-from-center">예상견적</a></li>
-				<li><a href="inquire.html" class="hvr-underline-from-center">견적문의</a></li>
-				<li><a href="contact.html" class="hvr-underline-from-center">Contact</a></li>
-			</ul>
-		</div>
-	</header>
+    [id*="step"] img {
+      width: 20rem;
+      height: 20rem;
+    }
+    #step {
+      font-size: 1.5rem;
 
-	<main role="main" id="main" class="main">
-		<div class="about_bg">
-		
-			<div class="contact">
-				<p>예상 견적</p>
-			</div>
+      padding-top: 1vh;
+      padding-bottom: 1vh;
+    }
 
-			<div class="c_menu">
-				<div class="c_container">
-					
-					<ul>
-						<li><a href="#" class="hvr-shutter-out-horizontal">제품사진</a></li>
-						<li><a href="#" class="hvr-shutter-out-horizontal">야외스냅</a></li>
-						<li><a href="#" class="hvr-shutter-out-horizontal">행사</a></li>
-						<li><a href="cost_d.html" class="hvr-shutter-out-horizontal">기업영상</a></li>
-					</ul>
+    [id*="step1-"] {
+      text-align: center;
+    }
+    #step1-1 input,
+    #step2-1 input {
+      width: 3em;
+      height: 1.5em;
+      outline: none;
+    }
+    #step1-1 input:focus {
+      outline: none;
+    }
 
-				</div>
-				
-			</div>
+    #nextBtn {
+      padding-right: 10vh;
+      padding-bottom: 10vh;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    #nextBtn div {
+      display: flex;
 
-			<div class="c_main">
-				<div class="c_m_container">				
-					<span>예비</span>
-				</div>
-			</div>
-		</div>
-		
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      height: 3rem;
+      width: 5rem;
+      margin-right: 3rem;
+      background-color: #88d9c3;
+    }
 
-	</main>
+    #step1-2 span {
+      display: flex;
+      justify-content: space-around;
+    }
 
-	<footer id="footer">
-		<div class="F_container">
-			
-			<div class="left">
-				<img src="img/footer_logo.jpg">
-			</div>
-			<div class="right">
-				
-				<div class="right_top">
-					<ul>
-						<li>유스더유스</li>
-						<li>대표자명 : 김태완</li>
-						<li>사업자등록번호 : <a href="https://www.ftc.go.kr">687-51-00454</a></li>
-						<li>통신판매업번호 : 2020-</li>
-						<li>충남부여-0004</li>
-					</ul>
-				</div>
-				<div class="right_bottom">
-					<ul>
-						<li>충청남도 부여군 부여읍 사비로 12번길 6-28 204호 (우 : 33167)</li>
-						<li>e-mail : six6200@naver.com</li>
-						<li>&copy; 2021 유스더유스 .All rights reserved.</li>
-					</ul>
-				</div>
-			</div>
+    #step1-3 div:first-of-type {
+      display: flex;
+      justify-content: space-around;
+    }
+    #step1-3 > div > div {
+      display: flex;
+      flex-direction: column;
+    }
 
-		</div>
-		
+    #step1-4 > div {
+      margin-top: 7rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    #step1-4 #send-email > div {
+      display: flex;
+    }
+    #step1-4 #send-email #se-text {
+      display: flex;
+      flex-direction: column;
+      padding-right: 5vh;
+      border-right: 2.5px solid black;
+      height: auto;
+    }
+    #se-text div,
+    #se-result div {
+      padding-top: 0.3vh;
+      padding-bottom: 0.3vh;
+      white-space: nowrap;
+    }
 
+    #se-result {
+      display: flex;
+      flex-direction: column;
+      padding-left: 5vh;
+      height: auto;
+    }
 
-	</footer>
+    #se-btn {
+      margin-top: 3vh;
+      border: 3px solid black;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 20px;
+    }
 
+    #get-cur {
+      justify-content: space-around;
+      height: 100%;
+    }
+    #gc-text {
+      margin-left: 5vh;
+      border-left: 2.5px solid black;
+      display: flex;
+      padding-left: 1vh;
+    }
+    #gc-text :nth-child(2) {
+      color: red;
+    }
 
+    #gc-text-2 {
+      font-size: 0.5vh;
+      align-items: flex-end;
+    }
 
+    #gc-btn {
+      margin-top: 3vh;
+      border: 3px solid black;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 20px;
+      background-color: #f2cb05;
+    }
 
+    #send-email,
+    #get-cur {
+      flex: 1;
+    }
 
+    #step2-1 div {
+      justify-content: center;
+      align-items: center;
+    }
 
+    #step2-2 > div,
+    #step3-3 > div {
+      margin-top: 8em;
+      display: flex;
+      flex: 1;
+    }
+    #step2-2 > div > div,
+    #step3-3 > div > div {
+      margin-left: 2em;
+      margin-right: 2em;
+    }
+    #step2-2 > div > div:nth-child(1),
+    #step2-2 > div > div:nth-child(2),
+    #step3-3 > div > div:nth-child(1),
+    #step3-3 > div > div:nth-child(2) {
+      padding-right: 2em;
+      border-right: 2.5px solid black;
+    }
+    #step2-3 div:nth-child(2) {
+      display: flex;
+    }
+    #step2-3 #_O div {
+      font-size: 10rem;
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+    #step2-3 #_X div {
+      font-size: 10rem;
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+    #_O,
+    #_X {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #_O input,
+    #_X input {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    #step2-3 > div:nth-child(3) {
+      margin-top: 3rem;
+    }
+    #step2-3 > div:nth-child(1) {
+      text-align: center;
+    }
+    #step2-3 > div:nth-child(3) > input {
+      margin-left: 6rem;
+      width: 3rem;
+      height: 1.5rem;
+      outline: none;
+    }
 
+    #step2-4,
+    #step3-2 {
+      align-items: center;
+      justify-content: space-around;
+      text-align: center;
+    }
 
+    #step2-4 input,
+    #step3-2 input {
+      width: 2rem;
+      height: 1.5rem;
+    }
 
+    #step2-5 > div {
+      margin-top: 7rem;
+      display: flex;
+    }
+    #step2-5 > div > #send-email > div {
+      display: flex;
+    }
 
+    #step2-5 #send-email #se-text {
+      display: flex;
+      flex-direction: column;
+      padding-right: 5vh;
+      border-right: 2.5px solid black;
+      height: auto;
+      white-space: nowrap;
+    }
 
+    #send-email {
+      margin-right: 3rem;
+    }
+    #get-cur {
+      margin-left: 3rem;
+    }
 
+    #step3-1 {
+      display: flex;
+    }
+    #step3-1 > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #step3-1 > div:nth-child(1) {
+      margin-right: 1rem;
+    }
+    #step3-1 > div:nth-child(2) {
+      margin-left: 1rem;
+    }
+    #step3-1 div input {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+    #step3-1 div span {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      flex: 1;
+    }
+    #step4-3 input {
+      margin-top: 2vh;
+      height: 1rem;
+      width: 1rem;
+    }
+    #step4-3 > div:nth-child(1) > img,
+    #step4-3 > div:nth-child(2) > img {
+      border-right: 2.5px solid black;
+    }
+  </style>
+  <body>
+    <header id="header">
+      <a href="index.html"><img src="img/logo_E_2.jpg" /></a>
+      <div class="lists">
+        <ul class="menu">
+          <li>
+            <a href="A_YTY.html" class="hvr-underline-from-center pop">About</a>
+          </li>
+          <li>
+            <a href="photo.html" class="hvr-underline-from-center"
+              >Photography</a
+            >
+          </li>
+          <li>
+            <a href="film.html" class="hvr-underline-from-center">Film</a>
+          </li>
+          <li>
+            <a href="cost.html" class="hvr-underline-from-center">예상견적</a>
+          </li>
+          <li>
+            <a href="inquire.html" class="hvr-underline-from-center"
+              >견적문의</a
+            >
+          </li>
+          <li>
+            <a href="contact.html" class="hvr-underline-from-center">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </header>
 
+    <main role="main" id="main" class="main">
+      <div class="about_bg">
+        <div class="contact">
+          <p>예상 견적</p>
+        </div>
 
+        <div class="c_menu">
+          <div class="c_container">
+            <ul>
+              <li>
+                <a href="#" class="hvr-shutter-out-horizontal">제품사진</a>
+              </li>
+              <li>
+                <a href="#" class="hvr-shutter-out-horizontal">야외스냅</a>
+              </li>
+              <li><a href="#" class="hvr-shutter-out-horizontal">행사</a></li>
+              <li>
+                <a href="cost_d.html" class="hvr-shutter-out-horizontal"
+                  >기업영상</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
 
+        <div class="c_main">
+          <div class="c_m_container">
+            <div id="step">STEP ONE</div>
+            <div id="step1-1">
+              <img
+                src="https://drive.google.com/uc?export=download&id=1xAB7YcgU9gLMbxPXadcQIqweerk7sa2v"
+                alt="제품사진 STEP ONE"
+                style="display: block"
+              />
+              촬영이 필요한 컷 수
+              <input type="number" />컷
+            </div>
+            <div id="step1-2">
+              <img
+                src="https://drive.google.com/uc?export=download&id=1AuMFHZ8it61ahI0une5De1wWgrjseGyy"
+                alt="제품사진 STEP TWO"
+              />
+              <div>
+                <span
+                  ><div>유광제품<input type="checkbox" name="유광제품" /></div>
+                  <div>대형제품<input type="checkbox" name="대형제품" /></div
+                ></span>
+              </div>
+            </div>
+            <div id="step1-3">
+              <img
+                src="https://drive.google.com/uc?export=download&id=1u-9nGSQZ8DHszniow1m5uw1CLCEtoEiH"
+                alt="제품사진 STEP THREE"
+              />
+              <div>
+                <div>
+                  <div>촬영품목</div>
+                  <div>(제품이름)</div>
+                </div>
+                <input type="text" name="촬영품목" id="" />
+              </div>
+            </div>
 
+            <div id="step1-4">
+              <!-- 컨테이너 -->
+              <div>
+                <!-- 이메일로 예상견적 -->
+                <!-- col -->
+                <div id="send-email">
+                  <!-- flex -->
+                  <div>
+                    <div id="se-text">
+                      <div>촬영컷수</div>
+                      <div>제품타입</div>
+                      <div>촬영제품명</div>
+                      <!-- 구분선 -->
+                      <div id="line"></div>
+                    </div>
+                    <div id="se-result">
+                      <div>~장</div>
+                      <div>무광 / 소형</div>
+                      <div>제품명</div>
+                    </div>
+                  </div>
+                  <div id="se-btn"><a href="#">이메일로 예상견적 발송</a></div>
+                </div>
+                <!-- 본 견적으로 상담 -->
+                <div id="get-cur">
+                  <!-- 구분선 -->
+                  <div id="gc-text">
+                    <div>예상견적</div>
+                    <div>000,000원</div>
+                  </div>
+                  <div id="gc-text-2">
+                    정식 견적에서 세부 요소로 인한 가격변동이 발생할 수
+                    있습니다.
+                  </div>
 
-</body>
+                  <div id="gc-btn"><a href="#">본 견적으로 상담하기</a></div>
+                </div>
+              </div>
+            </div>
+
+            <div id="step2-1">
+              <img
+                src="https://drive.google.com/uc?export=download&id=1EXoXVJIUV74_9wVVZ0trGIJciz0Ao5j6"
+                alt="야외스냅 STEP ONE"
+              />
+
+              <div>촬영인원 <input type="number" /></div>
+            </div>
+
+            <div id="step2-2">
+              <div>
+                <div>
+                  <div>부여</div>
+                  <div>출장비 X</div>
+                  <input type="checkbox" name="221" id="" />
+                </div>
+                <div>
+                  <div>출장(충남)</div>
+                  <div>출장비</div>
+                  <div>10만원</div>
+                  <input type="checkbox" name="222" id="" />
+                </div>
+                <div>
+                  <div>출장(충남 외)</div>
+                  <div>출장비</div>
+                  <div>10만원 + a</div>
+                  <input type="checkbox" name="223" id="" />
+                </div>
+              </div>
+            </div>
+            <div id="step2-3">
+              <div>단체사진 촬영여부</div>
+              <div>
+                <div id="_O">
+                  <div>O</div>
+                  <input type="checkbox" name="O" id="" />
+                </div>
+                <div id="_X">
+                  <div>X</div>
+                  <input type="checkbox" name="X" id="" />
+                </div>
+              </div>
+              <div><input type="number" name="" id="" />장</div>
+            </div>
+            <div id="step2-4">
+              <img
+                src="https://www.pngkey.com/png/detail/9-96566_download-and-use-clock-png-clipart-swiss-railway.png"
+              />
+              <div>촬영시간</div>
+              <input type="number" name="" id="" />시간
+              <div>(출장에 따른 이동시간 제외)</div>
+            </div>
+
+            <div id="step2-5">
+              <!-- 컨테이너 -->
+              <div>
+                <!-- 이메일로 예상견적 -->
+                <!-- col -->
+                <div id="send-email">
+                  <!-- flex -->
+                  <div>
+                    <div id="se-text">
+                      <div>촬영인원</div>
+                      <div>촬영장소</div>
+                      <div>단체사진</div>
+                      <div>촬영시간</div>
+                      <!-- 구분선 -->
+                      <div id="line"></div>
+                    </div>
+                    <div id="se-result">
+                      <div>~명</div>
+                      <div>부여 / 출장비 X</div>
+                      <div>O / ~장</div>
+                      <div>~시간</div>
+                    </div>
+                  </div>
+                  <div id="se-btn"><a href="#">이메일로 예상견적 발송</a></div>
+                </div>
+                <!-- 본 견적으로 상담 -->
+                <div id="get-cur">
+                  <!-- 구분선 -->
+                  <div id="gc-text">
+                    <div>예상견적</div>
+                    <div>000,000원</div>
+                  </div>
+                  <div id="gc-text-2">
+                    정식 견적에서 세부 요소로 인한 가격변동이 발생할 수
+                    있습니다.
+                  </div>
+
+                  <div id="gc-btn"><a href="#">본 견적으로 상담하기</a></div>
+                </div>
+              </div>
+            </div>
+            <div id="step3-1">
+              <div>
+                <img
+                  src="https://drive.google.com/uc?export=download&id=1b8CSI0GrvzbaHuAqQDyzfJAChmQ7_vOt"
+                  alt="행사 STEP ONE"
+                />
+                <span>사진촬영 <input type="checkbox" name="31" id="" /></span>
+              </div>
+              <div>
+                <img
+                  src="https://drive.google.com/uc?export=download&id=1ET9-vuKf_G8VFPFMBu6xuh_zbbFqm5GJ"
+                  alt="행사 STEP ONE"
+                />
+                <span
+                  >영상촬영(편집비용포함)
+                  <input type="checkbox" name="32" id=""
+                /></span>
+              </div>
+            </div>
+
+            <div id="step3-2">
+              <img
+                src="https://www.pngkey.com/png/detail/9-96566_download-and-use-clock-png-clipart-swiss-railway.png"
+              />
+              <div>촬영시간</div>
+              <span> <input type="number" name="" id="" />시간</span>
+              <div>(출장에 따른 이동시간 제외)</div>
+            </div>
+
+            <div id="step3-3">
+              <div>
+                <div>
+                  <div>부여</div>
+                  <div>출장비 X</div>
+                  <input type="checkbox" name="331" id="" />
+                </div>
+                <div>
+                  <div>출장(충남)</div>
+                  <div>출장비</div>
+                  <div>10만원</div>
+                  <input type="checkbox" name="332" id="" />
+                </div>
+                <div>
+                  <div>출장(충남 외)</div>
+                  <div>출장비</div>
+                  <div>10만원 + a</div>
+                  <input type="checkbox" name="333" id="" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="nextBtn">
+            <a href="#"><div>NEXT</div></a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <div class="F_container">
+        <div class="left">
+          <img src="img/footer_logo.jpg" />
+        </div>
+        <div class="right">
+          <div class="right_top">
+            <ul>
+              <li>유스더유스</li>
+              <li>대표자명 : 김태완</li>
+              <li>
+                사업자등록번호 :
+                <a href="https://www.ftc.go.kr">687-51-00454</a>
+              </li>
+              <li>통신판매업번호 : 2020-</li>
+              <li>충남부여-0004</li>
+            </ul>
+          </div>
+          <div class="right_bottom">
+            <ul>
+              <li>
+                충청남도 부여군 부여읍 사비로 12번길 6-28 204호 (우 : 33167)
+              </li>
+              <li>e-mail : six6200@naver.com</li>
+              <li>&copy; 2021 유스더유스 .All rights reserved.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script>
+    const phase = ["제품사진", "야외스냅", "행사", "기업영상"];
+    const stepSeires = ["", "STEP ONE", "STEP TWO", "STEP THREE", "STEP FOUR"];
+    const msgSeires = [
+      "",
+      "촬영이 필요한 컷 수",
+      "유광제품",
+      "대형제품",
+      "촬영품(제품이름)",
+    ];
+    let step1_1 = 0;
+    let step1_2 = { matt: true, small: true };
+    let step1_3 = "";
+
+    let step2_1 = 0;
+    let step2_2 = { buyeo: false, chungNam: false, else: false };
+    let step2_3 = { O: false, X: false, count: 0 };
+    let step2_4 = 0;
+
+    let step3_1 = { pic: false, movie: false };
+    let step3_2 = 0;
+    let step3_3 = { buyeo: false, chungNam: false, else: false };
+
+    let step4_1 = { marketing: false, interview: false };
+    let step4_2 = [0, 0, 0, 0];
+    let step4_22 = 0;
+    let step4_3 = [0, 0, 0];
+    let step4_costFlag = false;
+
+    let tempFlag = false;
+
+    let currentPhase = phase[0];
+    let currentStep = stepSeires[1];
+    let stepFourTempFlag = false;
+
+    // step1-1 2-1 2-4 3-2 func
+    const onChangeInput = (e) => {
+      e.preventDefault();
+      console.log(e);
+      console.log(e.path[2].getAttribute("id"));
+
+      let chkName = e.path[2].getAttribute("id");
+      let chkName2 = e.path[1].getAttribute("id");
+
+      if (chkName === "step2-1") {
+        step2_1 = e.target.value;
+      } else if (chkName2 === "step2-4") {
+        step2_4 = e.target.value;
+      } else if (chkName === "step3-2") {
+        step3_2 = e.target.value;
+      } else {
+        step1_1 = e.target.value;
+      }
+      console.log(step3_2);
+      console.log(step2_4);
+      console.log(step2_1);
+      console.log(step1_1);
+    };
+
+    // check phase
+    const chkPhase = (phs) => {
+      if (phs === phase[0]) {
+        for (let i of $step_one) {
+          //onsole.log(i);
+          i.style.display = "none";
+        }
+      } else if (phs === phase[1]) {
+        for (let i of $step_two) {
+          //console.log(i);
+          i.style.display = "none";
+        }
+      } else if (phs === phase[2]) {
+        for (let i of $step_three) {
+          //console.log(i);
+          i.style.display = "none";
+        }
+      }
+    };
+
+    // menu bar phase
+    const onClickPhase = (e) => {
+      e.preventDefault();
+
+      if (tempFlag) {
+        const $temp = document.querySelector(".tempCostNode");
+
+        $temp.parentNode.removeChild($temp);
+        tempFlag = false;
+      }
+
+      if (stepFourTempFlag) {
+        const $tempFour = document.querySelector(".tempImgLayoutNode");
+        if (!$tempFour) {
+        }
+        console.log($tempFour);
+        $tempFour.parentNode.removeChild($tempFour);
+        stepFourTempFlag = false;
+      }
+
+      if (step4_costFlag) {
+        $step_four.pop();
+        step4_costFlag = false;
+      }
+
+      //console.log(e.target.innerHTML);
+      let pastPhase = currentPhase;
+      currentPhase = e.target.innerHTML;
+      currentStep = stepSeires[1];
+      //console.log(pastPhase, "과거");
+      console.log(currentStep, currentPhase);
+
+      if (currentPhase === phase[0]) {
+        chkPhase(pastPhase);
+        $step_one[0].style.display = "block";
+        //console.log($step_one[0]);
+      } else if (currentPhase === phase[1]) {
+        chkPhase(pastPhase);
+        $step_two[0].style.display = "block";
+        //console.log($step_two[0]);
+      } else if (currentPhase === phase[2]) {
+        chkPhase(pastPhase);
+        if (currentStep === stepSeires[1]) {
+          $step_three[0].style.display = "flex";
+        } else {
+          $step_three[0].style.display = "block";
+        }
+
+        //console.log($step_three[0]);
+      } else if (currentPhase === phase[3]) {
+        chkPhase(pastPhase);
+
+        if (currentStep === stepSeires[1]) {
+          let _target = document.querySelector(".c_m_container");
+          _target.appendChild($step_four[0]);
+          $step_four[0].style.display = "flex";
+        } else {
+          $step_four[0].style.display = "block";
+        }
+        stepFourTempFlag = true;
+      }
+
+      $step.textContent = currentStep;
+    };
+
+    document
+      .querySelectorAll("a.hvr-shutter-out-horizontal")
+      .forEach(($phase) => $phase.addEventListener("click", onClickPhase));
+
+    const $step = document.querySelector("#step");
+
+    // step 1
+    const $step_one = document.querySelectorAll("[id *= step1-]");
+
+    // step 2
+    const $step_two = document.querySelectorAll("[id *= step2-]");
+
+    // step 3
+    const $step_three = document.querySelectorAll("[id *=step3-]");
+
+    const $allstep = [...$step_one, ...$step_two, ...$step_three];
+    let tempAll = $allstep.slice(1, $allstep.length);
+    for (let i of tempAll) {
+      i.style.display = "none";
+    }
+
+    // step 1-1 event
+    $step_one[0].addEventListener("change", onChangeInput);
+
+    // step 1-2 event
+    const onClickChk = (e) => {
+      if (e.target.checked) {
+        if (e.target.name === "유광제품") {
+          step1_2["matt"] = false;
+        } else if (e.target.name === "대형제품") {
+          step1_2["small"] = false;
+        }
+      } else {
+        if (e.target.name === "유광제품") {
+          step1_2["matt"] = true;
+        } else if (e.target.name === "대형제품") {
+          step1_2["small"] = true;
+        }
+      }
+
+      //console.log(step1_2);
+    };
+
+    $step_one[1].querySelectorAll("input").forEach(($$step1_2) => {
+      $$step1_2.addEventListener("change", onClickChk);
+    });
+
+    // step 1-3 event
+    const onChangeInputStep1_3 = (e) => {
+      step1_3 = e.target.value;
+      //console.log(step1_3);
+    };
+
+    $step_one[2]
+      .querySelector("input")
+      .addEventListener("change", onChangeInputStep1_3);
+
+    // step 1-4 event
+    const $1_4Result = $step_one[3].querySelectorAll("#se-result > div");
+    const $1_4ResultCalc = $step_one[3].querySelectorAll("#gc-text div")[1];
+
+    //console.log($1_4Result);
+    const SeResult = () => {
+      $1_4Result[0].textContent = step1_1;
+
+      let tempStr = "";
+      let cnt = 0;
+      if (step1_2["matt"]) {
+        tempStr += "무광";
+      } else {
+        tempStr += "유광";
+        cnt += 1;
+      }
+
+      if (step1_2["small"]) {
+        tempStr += " / 소형";
+      } else {
+        tempStr += " / 대형";
+        cnt += 1;
+      }
+      $1_4Result[1].textContent = tempStr;
+      $1_4Result[2].textContent = step1_3;
+
+      // 계산
+
+      let _result = step1_1 * (70000 + cnt * 10000);
+      //console.log(_result);
+      $1_4ResultCalc.textContent = _result;
+    };
+
+    // step 2-1
+
+    $step_two[0]
+      .querySelector("input")
+      .addEventListener("change", onChangeInput);
+
+    // step 2-2
+    const onChangeChk2_2 = (e) => {
+      if (e.target.checked) {
+        if (e.target.name === "221") {
+          step2_2["buyeo"] = true;
+        } else if (e.target.name === "222") {
+          step2_2["chungNam"] = true;
+        } else if (e.target.name === "332") {
+          step3_3["chungNam"] = true;
+        } else if (e.target.name === "331") {
+          step3_3["buyeo"] = true;
+        } else if (e.target.name === "223") {
+          step2_2["else"] = true;
+        } else if (e.target.name === "333") {
+          step3_3["else"] = true;
+        }
+      } else {
+        if (e.target.name === "221") {
+          step2_2["buyeo"] = false;
+        } else if (e.target.name === "222") {
+          step2_2["chungNam"] = false;
+        } else if (e.target.name === "332") {
+          step3_3["chungNam"] = false;
+        } else if (e.target.name === "331") {
+          step3_3["buyeo"] = false;
+        } else if (e.target.name === "223") {
+          step2_2["else"] = false;
+        } else if (e.target.name === "333") {
+          step3_3["else"] = false;
+        }
+      }
+
+      //console.log("this is step2-2", step2_2);
+      //console.log("this is step3-3", step3_3);
+    };
+    //console.log($step_two[1]);
+    $step_two[1].querySelectorAll("input").forEach(($step2_2) => {
+      $step2_2.addEventListener("change", onChangeChk2_2);
+    });
+
+    //step 2-3 event
+    const onChangeChk2_3 = (e) => {
+      if (e.target.checked) {
+        if (e.target.name === "O") {
+          step2_3["O"] = true;
+        } else if (e.target.name === "X") {
+          step2_3["X"] = true;
+        }
+      } else {
+        if (e.target.name === "O") {
+          step2_3["O"] = false;
+        } else if (e.target.name === "X") {
+          step2_3["X"] = false;
+        }
+      }
+      console.log(step2_3);
+    };
+
+    const onChangeInput2_3 = (e) => {
+      step2_3["count"] = e.target.value;
+      console.log(step2_3["count"]);
+    };
+
+    $step_two[2]
+      .querySelectorAll("#_O input,#_X input")
+      .forEach(($steptwoInputs) => {
+        $steptwoInputs.addEventListener("change", onChangeChk2_3);
+      });
+
+    $step_two[2]
+      .querySelectorAll("input")[2]
+      .addEventListener("change", onChangeInput2_3);
+
+    // 2-4 event
+    $step_two[3]
+      .querySelector("input")
+      .addEventListener("change", onChangeInput);
+
+    // 2-5 event
+    const SeResult2 = () => {
+      let expense = 0;
+      let tempStr = "";
+      let groupPic = 0;
+      if (step2_2["chungNam"] === true) {
+        expense += 100000;
+        tempStr += "충남 / 출장비 100,000\n";
+      }
+      if (step2_2["else"] === true) {
+        expense += 100000;
+        tempStr += "충남 외 / 출장비 100,000 + a\n";
+      }
+      if (step2_2["buyeo"]) {
+        tempStr += "부여 / 출장비 X\n";
+      }
+
+      if (step2_3["O"] === true) {
+        groupPic = step2_3["count"];
+      }
+      if (step2_4 <= 0) {
+        step2_4 = 1;
+      }
+      let _result =
+        50000 * step2_1 * step2_4 +
+        expense +
+        step2_3["count"] * groupPic * 50000;
+
+      //console.log(_result);
+
+      const $steptwoResult = $step_two[4].querySelectorAll("#se-result div");
+      //console.log($steptwoResult);
+      $steptwoResult[0].textContent = step2_1;
+      $steptwoResult[1].textContent = tempStr;
+      $steptwoResult[2].textContent = step2_3["count"];
+      $steptwoResult[3].textContent = step2_4;
+
+      $step_two[4].querySelectorAll("#gc-text div")[1].textContent = _result;
+    };
+
+    //step3-1 event
+    const onChangeChk3_1 = (e) => {
+      if (e.target.checked) {
+        if (e.target.name === "31") {
+          step3_1["pic"] = true;
+        } else if (e.target.name === "32") {
+          step3_1["movie"] = true;
+        }
+      } else {
+        if (e.target.name === "31") {
+          step3_1["pic"] = false;
+        } else if (e.target.name === "32") {
+          step3_1["movie"] = false;
+        }
+      }
+      console.log(step3_1);
+    };
+
+    $step_three[0].querySelectorAll("input").forEach((bundle) => {
+      bundle.addEventListener("change", onChangeChk3_1);
+    });
+
+    //step3-2 event
+    $step_three[1]
+      .querySelector("input")
+      .addEventListener("change", onChangeInput);
+    //step3-3 event
+
+    $step_three[2].querySelectorAll("input").forEach((bundle) => {
+      bundle.addEventListener("change", onChangeChk2_2);
+    });
+
+    //step3-4 event, 레이아웃을 만들었음 step2-5를 기준으로
+
+    const MakeCostNode = (_phase) => {
+      let _template = document.querySelector("#step2-5");
+      let temp = _template.cloneNode(true);
+      temp.style.display = "block";
+      temp.classList.add("tempCostNode");
+
+      let tempStr = "";
+      let tempStrCost = 0;
+
+      let tempStr2 = "";
+      let tempStr2Cost = 0;
+      if (_phase === phase[2]) {
+        temp.querySelector("#se-text > div:nth-child(1)").textContent =
+          "촬영타입";
+        temp.querySelector("#se-text > div:nth-child(2)").textContent =
+          "촬영시간";
+        temp.querySelector("#se-text > div:nth-child(3)").textContent =
+          "촬영장소";
+        let delNode = temp.querySelector("#se-text > div:nth-child(4)");
+        delNode.parentNode.removeChild(delNode);
+
+        if (step3_1["pic"] === true) {
+          tempStr = "사진 / RAW 보정";
+          tempStrCost = 120000;
+        } else if (step3_1["movie"] === true) {
+          tempStr = "영상 / 행사 스케치 편집";
+          tempStrCost = 150000;
+        }
+        temp.querySelector("#se-result > div:nth-child(1)").textContent =
+          tempStr;
+        temp.querySelector("#se-result > div:nth-child(2)").textContent =
+          step3_2;
+
+        if (step3_3["buyeo"] === true) {
+          tempStr2 = "부여 / 출장비 X";
+          tempStr2Cost = 0;
+        } else if (step3_3["chungNam"] === true) {
+          tempStr2 = "충남 / 출장비 100,000";
+          tempStr2Cost = 100000;
+        } else if (step3_3["else"]) {
+          tempStr2 = "충남 / 출장비 100,000 + a";
+          tempStr2Cost = 100000;
+        }
+        temp.querySelector("#se-result > div:nth-child(3)").textContent =
+          tempStr2;
+
+        let delNode_result = temp.querySelector(
+          "#se-result > div:nth-child(4)"
+        );
+        delNode_result.parentNode.removeChild(delNode_result);
+
+        console.log(temp);
+
+        //행사 가격 계산
+        let _result;
+        if (tempStrCost === 120000) {
+          _result = tempStrCost * parseInt(step3_2) + tempStr2Cost;
+        } else if (tempStrCost === 150000) {
+          _result = tempStrCost * parseInt(step3_2) + tempStr2Cost + 600000;
+        }
+        console.log("행사가격", _result);
+        console.log(tempStr2Cost, step3_2, tempStrCost);
+        if (!_result) {
+          _result = 0;
+        }
+        temp.querySelector("#gc-text > div:nth-child(2)").textContent = _result;
+      }
+
+      return temp;
+    };
+
+    // step 4-1 event step3-1 기준으로 만들었음
+    const MakeLayout = (_src, _txt) => {
+      let temp = document.querySelector("#step3-1");
+      temp = temp.cloneNode(true);
+      temp.classList.add("tempImgLayoutNode");
+      imgList = temp.querySelectorAll("img");
+      if (_src.length === imgList.length) {
+        for (let i = 0; i < _src.length; i++) {
+          imgList[i].src = _src[i];
+          temp.querySelectorAll("span")[i].textContent = _txt[i];
+          let _input = document.createElement("input");
+          _input.type = "checkbox";
+          _input.name = _txt[i];
+          temp.querySelectorAll("span")[i].appendChild(_input);
+          temp.querySelectorAll("span")[i].addEventListener("change", (e) => {
+            if (e.target.checked) {
+              if (e.target.name === "홍보영상") {
+                step4_1["marketing"] = true;
+              } else if (e.target.name === "인터뷰영상") {
+                step4_1["interview"] = true;
+              }
+            } else {
+              if (e.target.name === "홍보영상") {
+                step4_1["marketing"] = false;
+              } else if (e.target.name === "인터뷰영상") {
+                step4_1["interview"] = false;
+              }
+            }
+
+            //console.log(step4_1);
+          });
+        }
+      }
+
+      return temp;
+    };
+    //step 4-2 event
+    const MakeLayoutWatch = () => {
+      let temp = document.querySelector("#step3-2");
+      temp = temp.cloneNode(true);
+      temp.classList.add("tempImgLayoutNode");
+      temp.querySelectorAll("div")[0].innerHTML = "영상길이";
+      temp.querySelectorAll("div")[1].innerHTML = "";
+      let ShouldDelInput = temp.querySelector("span");
+      ShouldDelInput.parentNode.removeChild(ShouldDelInput);
+      let tempDivContainer = document.createElement("div");
+      tempDivContainer.classList.add("tempCon");
+      let _list = ["1분미만", "1분 ~ 3분미만", "3분 ~ 4분미만", "4분 초과"];
+
+      for (let i of _list) {
+        let tempDiv = document.createElement("div");
+        let tempChk = document.createElement("input");
+        tempChk.type = "checkbox";
+        tempChk.name = i;
+        tempDiv.textContent = i;
+        tempDiv.appendChild(tempChk);
+        tempDiv.style.display = "flex";
+        tempDiv.style.flexDirection = "column";
+        tempDiv.style.marginTop = "1rem";
+        tempDiv.style.marginLeft = "2rem";
+        tempDiv.style.textAlign = "center";
+        tempDiv.style.alignItems = "center ";
+
+        tempChk.addEventListener("change", (e) => {
+          console.log(e.target.checked);
+
+          if (e.target.checked) {
+            step4_2[_list.indexOf(e.target.name)] = 1;
+            const reducer = (accumulator, curr) => accumulator + curr;
+            let isTwo = step4_2.reduce(reducer);
+            if (isTwo > 1) {
+              step4_2[_list.indexOf(e.target.name)] = 0;
+              tempChk.checked = false;
+              console.log(e.target.checked);
+            }
+          } else {
+            step4_2[_list.indexOf(e.target.name)] = 0;
+          }
+          console.log(step4_2);
+        });
+        tempDivContainer.appendChild(tempDiv);
+      }
+
+      temp.appendChild(tempDivContainer);
+      temp.querySelector(".tempCon").style.display = "flex";
+
+      console.log(temp);
+
+      return temp;
+    };
+
+    // step 4-3
+    const MakeLayoutChk = () => {
+      let tempDivContainer = document.createElement("div");
+      tempDivContainer.id = "step4-3";
+      tempDivContainer.className = "tempImgLayoutNode";
+
+      srcList = [
+        "https://drive.google.com/uc?export=download&id=1r8H-e3ySLwvEmqJP-HIgYIC_nR6wEh4R",
+        "http://drive.google.com/uc?export=view&id=19fVuV5020EStrzS1ElsIDe85FDXr9fVR",
+        "http://drive.google.com/uc?export=view&id=113cfEGuYgoCAlG5rXyrp9vp2xN3whJCt",
+      ];
+      txtList = ["기획 및 콘티 제작", "배우 / 성우 섭외", "헤어 메이크업"];
+      for (let i = 0; i < srcList.length; i++) {
+        let tempDiv = document.createElement("div");
+        let tempImg = document.createElement("img");
+        tempDiv.textContent = txtList[i];
+        tempImg.src = srcList[i];
+
+        let tempChk = document.createElement("input");
+        tempChk.type = "checkbox";
+        tempChk.name = txtList[i];
+
+        tempDiv.style.display = "flex";
+        tempDiv.style.flexDirection = "column";
+        tempDiv.style.alignItems = "center";
+        tempDiv.appendChild(tempImg);
+        tempDiv.appendChild(tempChk);
+
+        tempImg.style.height = "17rem";
+        tempImg.style.objectFit = "contain";
+        tempImg.style.marginLeft = "1vh";
+
+        tempDivContainer.appendChild(tempDiv);
+
+        tempChk.addEventListener("change", (e) => {
+          if (e.target.checked) {
+            if (e.target.name === txtList[0]) {
+              step4_3[0] = 1;
+            } else if (e.target.name === txtList[1]) {
+              step4_3[1] = 1;
+            } else if (e.target.name === txtList[2]) {
+              step4_3[2] = 1;
+            }
+          } else {
+            if (e.target.name === txtList[0]) {
+              step4_3[0] = 0;
+            } else if (e.target.name === txtList[1]) {
+              step4_3[1] = 0;
+            } else if (e.target.name === txtList[2]) {
+              step4_3[2] = 0;
+            }
+          }
+          console.log(step4_3);
+        });
+      }
+      tempDivContainer.style.display = "flex";
+
+      return tempDivContainer;
+    };
+    // step 4-4 event
+
+    const MakeCostNode4_4 = () => {
+      let _template = document.querySelector("#step2-5");
+      let temp = _template.cloneNode(true);
+      temp.style.display = "block";
+
+      //temp.classList.add("tempCostNode");
+      temp.classList.add("tempImgLayoutNode");
+
+      let tempStr = "";
+      let tempStrCost = 0;
+
+      let tempStr2 = "";
+
+      temp.querySelector("#se-text > div:nth-child(1)").textContent =
+        "영상유형";
+      temp.querySelector("#se-text > div:nth-child(2)").textContent =
+        "영상길이";
+      temp.querySelector("#se-text > div:nth-child(3)").textContent = "옵션";
+      let delNode = temp.querySelector("#se-text > div:nth-child(4)");
+      delNode.parentNode.removeChild(delNode);
+
+      if (step4_1["marketing"] === true) {
+        if (step4_2[0] === 1) {
+          tempStrCost = 900000;
+          tempStr2 = "1분 미만";
+        } else if (step4_2[1] === 1) {
+          tempStrCost = 2000000;
+          tempStr2 = "1 ~ 3분 미만";
+        } else if (step4_2[2] === 1) {
+          tempStrCost = 3700000;
+          tempStr2 = "3 ~ 4분 미만";
+        } else if (step4_2[3] === 1) {
+          tempStrCost = 4300000;
+          tempStr2 = "4분 초과";
+        }
+        tempStr = "홍보영상";
+      } else if (step4_1["interview"] === true) {
+        if (step4_2[0] === 1) {
+          tempStrCost = 700000;
+          tempStr2 = "1분 미만";
+        } else if (step4_2[1] === 1) {
+          tempStrCost = 1600000;
+          tempStr2 = "1 ~ 3분 미만";
+        } else if (step4_2[2] === 1) {
+          tempStrCost = 2400000;
+          tempStr2 = "3 ~ 4분 미만";
+        } else if (step4_2[3] === 1) {
+          tempStrCost = 3500000;
+          tempStr2 = "4분 초과";
+        }
+        tempStr = "인터뷰 영상";
+      }
+
+      temp.querySelector("#se-result > div:nth-child(1)").textContent = tempStr;
+      temp.querySelector("#se-result > div:nth-child(2)").textContent =
+        tempStr2;
+
+      let tempStr3 = "";
+      let tempStr3Cost = 0;
+      if (step4_3[0] === 1) {
+        tempStr3 += "기획 및 콘티 제작";
+        tempStr3Cost += 800000;
+      } else if (step4_3[1] === 1) {
+        tempStr3 += "배우 / 성우 섭외";
+        tempStr2Cost += 900000;
+      } else if (step4_3[2] === 1) {
+        tempStr3 += "헤어 메이크업";
+        tempStr3Cost += 900000;
+      }
+      temp.querySelector("#se-result > div:nth-child(3)").textContent =
+        tempStr3;
+
+      let delNode_result = temp.querySelector("#se-result > div:nth-child(4)");
+      delNode_result.parentNode.removeChild(delNode_result);
+
+      console.log(temp);
+
+      //행사 가격 계산
+      let _result = tempStr3Cost;
+      console.log("행사가격", _result);
+
+      temp.querySelector("#gc-text > div:nth-child(2)").textContent = _result;
+
+      return temp;
+    };
+
+    MakeCostNode4_4();
+
+    let $step_four = [
+      MakeLayout(
+        [
+          "http://drive.google.com/uc?export=view&id=1tgW0E1XiTbHLlEv0GbKQGNHmgNj5UGKh",
+          "http://drive.google.com/uc?export=view&id=19fVuV5020EStrzS1ElsIDe85FDXr9fVR",
+        ],
+        ["홍보영상", "인터뷰영상"]
+      ),
+      MakeLayoutWatch(),
+      MakeLayoutChk(),
+    ];
+
+    //next Button
+    const onClickNext = (e) => {
+      e.preventDefault();
+      console.log(currentPhase, currentStep);
+
+      let currentIdx = stepSeires.indexOf(currentStep);
+      console.log(currentIdx);
+
+      if (currentPhase === phase[0] && currentStep === stepSeires[4]) {
+        return;
+      } else if (currentPhase === phase[1] && currentStep === stepSeires[5]) {
+        return;
+      } else if (currentPhase === phase[2] && currentStep === stepSeires[4]) {
+        return;
+      } else if (currentPhase === phase[3] && currentStep === stepSeires[4]) {
+        return;
+      }
+
+      if (currentIdx) {
+        currentStep = stepSeires[currentIdx + 1];
+        $step.textContent = currentStep;
+        if (currentPhase === phase[0]) {
+          $step_one[currentIdx - 1].style.display = "none";
+
+          $step_one[currentIdx].style.display = "block";
+
+          //console.log(currentStep);
+          //console.log(currentIdx);
+        } else if (currentPhase === phase[1]) {
+          $step_two[currentIdx - 1].style.display = "none";
+          $step_two[currentIdx].style.display = "block";
+        } else if (currentPhase === phase[2]) {
+          console.log(currentIdx);
+          $step_three[currentIdx - 1].style.display = "none";
+          if (!$step_three[currentIdx]) {
+          } else {
+            $step_three[currentIdx].style.display = "block";
+          }
+        } else if (currentPhase === phase[3]) {
+          console.log(currentIdx);
+
+          if (currentIdx === 3) {
+            $step_four.push(MakeCostNode4_4());
+            step4_costFlag = true;
+          }
+
+          let _target = document.querySelector(".c_m_container");
+
+          console.log($step_four[currentIdx]);
+          const $ShouldDel = document.querySelector(".tempImgLayoutNode");
+          $ShouldDel.parentNode.removeChild($ShouldDel);
+          if (currentIdx === 2) {
+            $step_four[currentIdx].style.display = "flex";
+          } else {
+            $step_four[currentIdx].style.display = "block";
+          }
+
+          _target.appendChild($step_four[currentIdx]);
+          stepFourTempFlag = true;
+        }
+      }
+      console.log(currentPhase, phase[2], currentIdx);
+      if (currentIdx === 3 && currentPhase === phase[0]) {
+        document.querySelector(".c_main > .c_m_container > #step").textContent =
+          "RESULT";
+        SeResult();
+      } else if (currentIdx === 4 && currentPhase === phase[1]) {
+        document.querySelector(".c_main > .c_m_container > #step").textContent =
+          "RESULT";
+        SeResult2();
+      } else if (currentIdx === 3 && currentPhase == phase[2]) {
+        document.querySelector(".c_main > .c_m_container > #step").textContent =
+          "RESULT";
+        let _target = document.querySelector(".c_m_container");
+        _target.appendChild(MakeCostNode(currentPhase));
+
+        console.log(MakeCostNode(currentPhase));
+        tempFlag = true;
+      }
+    };
+    const $nextBtn = document.querySelector("#nextBtn a");
+    $nextBtn.addEventListener("click", onClickNext);
+  </script>
+
+  <script src="cost.js" />
 </html>

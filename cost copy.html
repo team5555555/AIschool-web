@@ -289,6 +289,15 @@
       text-align: center;
       flex: 1;
     }
+    #step4-3 input {
+      margin-top: 2vh;
+      height: 1rem;
+      width: 1rem;
+    }
+    #step4-3 > div:nth-child(1) > img,
+    #step4-3 > div:nth-child(2) > img {
+      border-right: 2.5px solid black;
+    }
   </style>
   <body>
     <header id="header">
@@ -543,7 +552,7 @@
                 src="https://www.pngkey.com/png/detail/9-96566_download-and-use-clock-png-clipart-swiss-railway.png"
               />
               <div>촬영시간</div>
-              <input type="number" name="" id="" />시간
+              <span> <input type="number" name="" id="" />시간</span>
               <div>(출장에 따른 이동시간 제외)</div>
             </div>
 
@@ -569,6 +578,7 @@
               </div>
             </div>
           </div>
+
           <div id="nextBtn">
             <a href="#"><div>NEXT</div></a>
           </div>
@@ -630,23 +640,32 @@
     let step3_2 = 0;
     let step3_3 = { buyeo: false, chungNam: false, else: false };
 
+    let step4_1 = { marketing: false, interview: false };
+    let step4_2 = [0, 0, 0, 0];
+    let step4_22 = 0;
+    let step4_3 = [0, 0, 0];
+    let step4_costFlag = false;
+
+    let tempFlag = false;
+
     let currentPhase = phase[0];
     let currentStep = stepSeires[1];
-    let flag = true;
+    let stepFourTempFlag = false;
 
     // step1-1 2-1 2-4 3-2 func
     const onChangeInput = (e) => {
       e.preventDefault();
-      //console.log(e);
-      //console.log(e.path[2].getAttribute("id"));
+      console.log(e);
+      console.log(e.path[2].getAttribute("id"));
 
       let chkName = e.path[2].getAttribute("id");
       let chkName2 = e.path[1].getAttribute("id");
+
       if (chkName === "step2-1") {
         step2_1 = e.target.value;
       } else if (chkName2 === "step2-4") {
         step2_4 = e.target.value;
-      } else if (chkName2 === "step3-2") {
+      } else if (chkName === "step3-2") {
         step3_2 = e.target.value;
       } else {
         step1_1 = e.target.value;
@@ -677,15 +696,37 @@
       }
     };
 
-    // upper phase
+    // menu bar phase
     const onClickPhase = (e) => {
       e.preventDefault();
+
+      if (tempFlag) {
+        const $temp = document.querySelector(".tempCostNode");
+
+        $temp.parentNode.removeChild($temp);
+        tempFlag = false;
+      }
+
+      if (stepFourTempFlag) {
+        const $tempFour = document.querySelector(".tempImgLayoutNode");
+        if (!$tempFour) {
+        }
+        console.log($tempFour);
+        $tempFour.parentNode.removeChild($tempFour);
+        stepFourTempFlag = false;
+      }
+
+      if (step4_costFlag) {
+        $step_four.pop();
+        step4_costFlag = false;
+      }
+
       //console.log(e.target.innerHTML);
       let pastPhase = currentPhase;
       currentPhase = e.target.innerHTML;
       currentStep = stepSeires[1];
       //console.log(pastPhase, "과거");
-      //console.log(currentStep, currentPhase);
+      console.log(currentStep, currentPhase);
 
       if (currentPhase === phase[0]) {
         chkPhase(pastPhase);
@@ -704,6 +745,17 @@
         }
 
         //console.log($step_three[0]);
+      } else if (currentPhase === phase[3]) {
+        chkPhase(pastPhase);
+
+        if (currentStep === stepSeires[1]) {
+          let _target = document.querySelector(".c_m_container");
+          _target.appendChild($step_four[0]);
+          $step_four[0].style.display = "flex";
+        } else {
+          $step_four[0].style.display = "block";
+        }
+        stepFourTempFlag = true;
       }
 
       $step.textContent = currentStep;
@@ -960,6 +1012,9 @@
     const MakeCostNode = (_phase) => {
       let _template = document.querySelector("#step2-5");
       let temp = _template.cloneNode(true);
+      temp.style.display = "block";
+      temp.classList.add("tempCostNode");
+
       let tempStr = "";
       let tempStrCost = 0;
 
@@ -999,22 +1054,283 @@
         }
         temp.querySelector("#se-result > div:nth-child(3)").textContent =
           tempStr2;
+
+        let delNode_result = temp.querySelector(
+          "#se-result > div:nth-child(4)"
+        );
+        delNode_result.parentNode.removeChild(delNode_result);
+
         console.log(temp);
 
         //행사 가격 계산
         let _result;
-        if (tempStr2Cost === 120000) {
-          _result = tempStrCost * step3_2 + tempStr2Cost;
-        } else if (tempStr2Cost === 150000) {
-          _result = tempStrCost * step3_2 + tempStr2Cost + 600000;
+        if (tempStrCost === 120000) {
+          _result = tempStrCost * parseInt(step3_2) + tempStr2Cost;
+        } else if (tempStrCost === 150000) {
+          _result = tempStrCost * parseInt(step3_2) + tempStr2Cost + 600000;
         }
-
+        console.log("행사가격", _result);
+        console.log(tempStr2Cost, step3_2, tempStrCost);
+        if (!_result) {
+          _result = 0;
+        }
         temp.querySelector("#gc-text > div:nth-child(2)").textContent = _result;
       }
 
       return temp;
     };
-    MakeCostNode(phase[2]);
+
+    // step 4-1 event step3-1 기준으로 만들었음
+    const MakeLayout = (_src, _txt) => {
+      let temp = document.querySelector("#step3-1");
+      temp = temp.cloneNode(true);
+      temp.classList.add("tempImgLayoutNode");
+      imgList = temp.querySelectorAll("img");
+      if (_src.length === imgList.length) {
+        for (let i = 0; i < _src.length; i++) {
+          imgList[i].src = _src[i];
+          temp.querySelectorAll("span")[i].textContent = _txt[i];
+          let _input = document.createElement("input");
+          _input.type = "checkbox";
+          _input.name = _txt[i];
+          temp.querySelectorAll("span")[i].appendChild(_input);
+          temp.querySelectorAll("span")[i].addEventListener("change", (e) => {
+            if (e.target.checked) {
+              if (e.target.name === "홍보영상") {
+                step4_1["marketing"] = true;
+              } else if (e.target.name === "인터뷰영상") {
+                step4_1["interview"] = true;
+              }
+            } else {
+              if (e.target.name === "홍보영상") {
+                step4_1["marketing"] = false;
+              } else if (e.target.name === "인터뷰영상") {
+                step4_1["interview"] = false;
+              }
+            }
+
+            //console.log(step4_1);
+          });
+        }
+      }
+
+      return temp;
+    };
+    //step 4-2 event
+    const MakeLayoutWatch = () => {
+      let temp = document.querySelector("#step3-2");
+      temp = temp.cloneNode(true);
+      temp.classList.add("tempImgLayoutNode");
+      temp.querySelectorAll("div")[0].innerHTML = "영상길이";
+      temp.querySelectorAll("div")[1].innerHTML = "";
+      let ShouldDelInput = temp.querySelector("span");
+      ShouldDelInput.parentNode.removeChild(ShouldDelInput);
+      let tempDivContainer = document.createElement("div");
+      tempDivContainer.classList.add("tempCon");
+      let _list = ["1분미만", "1분 ~ 3분미만", "3분 ~ 4분미만", "4분 초과"];
+
+      for (let i of _list) {
+        let tempDiv = document.createElement("div");
+        let tempChk = document.createElement("input");
+        tempChk.type = "checkbox";
+        tempChk.name = i;
+        tempDiv.textContent = i;
+        tempDiv.appendChild(tempChk);
+        tempDiv.style.display = "flex";
+        tempDiv.style.flexDirection = "column";
+        tempDiv.style.marginTop = "1rem";
+        tempDiv.style.marginLeft = "2rem";
+        tempDiv.style.textAlign = "center";
+        tempDiv.style.alignItems = "center ";
+
+        tempChk.addEventListener("change", (e) => {
+          console.log(e.target.checked);
+
+          if (e.target.checked) {
+            step4_2[_list.indexOf(e.target.name)] = 1;
+            const reducer = (accumulator, curr) => accumulator + curr;
+            let isTwo = step4_2.reduce(reducer);
+            if (isTwo > 1) {
+              step4_2[_list.indexOf(e.target.name)] = 0;
+              tempChk.checked = false;
+              console.log(e.target.checked);
+            }
+          } else {
+            step4_2[_list.indexOf(e.target.name)] = 0;
+          }
+          console.log(step4_2);
+        });
+        tempDivContainer.appendChild(tempDiv);
+      }
+
+      temp.appendChild(tempDivContainer);
+      temp.querySelector(".tempCon").style.display = "flex";
+
+      console.log(temp);
+
+      return temp;
+    };
+
+    // step 4-3
+    const MakeLayoutChk = () => {
+      let tempDivContainer = document.createElement("div");
+      tempDivContainer.id = "step4-3";
+      tempDivContainer.className = "tempImgLayoutNode";
+
+      srcList = [
+        "https://drive.google.com/uc?export=download&id=1r8H-e3ySLwvEmqJP-HIgYIC_nR6wEh4R",
+        "http://drive.google.com/uc?export=view&id=19fVuV5020EStrzS1ElsIDe85FDXr9fVR",
+        "http://drive.google.com/uc?export=view&id=113cfEGuYgoCAlG5rXyrp9vp2xN3whJCt",
+      ];
+      txtList = ["기획 및 콘티 제작", "배우 / 성우 섭외", "헤어 메이크업"];
+      for (let i = 0; i < srcList.length; i++) {
+        let tempDiv = document.createElement("div");
+        let tempImg = document.createElement("img");
+        tempDiv.textContent = txtList[i];
+        tempImg.src = srcList[i];
+
+        let tempChk = document.createElement("input");
+        tempChk.type = "checkbox";
+        tempChk.name = txtList[i];
+
+        tempDiv.style.display = "flex";
+        tempDiv.style.flexDirection = "column";
+        tempDiv.style.alignItems = "center";
+        tempDiv.appendChild(tempImg);
+        tempDiv.appendChild(tempChk);
+
+        tempImg.style.height = "17rem";
+        tempImg.style.objectFit = "contain";
+        tempImg.style.marginLeft = "1vh";
+
+        tempDivContainer.appendChild(tempDiv);
+
+        tempChk.addEventListener("change", (e) => {
+          if (e.target.checked) {
+            if (e.target.name === txtList[0]) {
+              step4_3[0] = 1;
+            } else if (e.target.name === txtList[1]) {
+              step4_3[1] = 1;
+            } else if (e.target.name === txtList[2]) {
+              step4_3[2] = 1;
+            }
+          } else {
+            if (e.target.name === txtList[0]) {
+              step4_3[0] = 0;
+            } else if (e.target.name === txtList[1]) {
+              step4_3[1] = 0;
+            } else if (e.target.name === txtList[2]) {
+              step4_3[2] = 0;
+            }
+          }
+          console.log(step4_3);
+        });
+      }
+      tempDivContainer.style.display = "flex";
+
+      return tempDivContainer;
+    };
+    // step 4-4 event
+
+    const MakeCostNode4_4 = () => {
+      let _template = document.querySelector("#step2-5");
+      let temp = _template.cloneNode(true);
+      temp.style.display = "block";
+
+      //temp.classList.add("tempCostNode");
+      temp.classList.add("tempImgLayoutNode");
+
+      let tempStr = "";
+      let tempStrCost = 0;
+
+      let tempStr2 = "";
+
+      temp.querySelector("#se-text > div:nth-child(1)").textContent =
+        "영상유형";
+      temp.querySelector("#se-text > div:nth-child(2)").textContent =
+        "영상길이";
+      temp.querySelector("#se-text > div:nth-child(3)").textContent = "옵션";
+      let delNode = temp.querySelector("#se-text > div:nth-child(4)");
+      delNode.parentNode.removeChild(delNode);
+
+      if (step4_1["marketing"] === true) {
+        if (step4_2[0] === 1) {
+          tempStrCost = 900000;
+          tempStr2 = "1분 미만";
+        } else if (step4_2[1] === 1) {
+          tempStrCost = 2000000;
+          tempStr2 = "1 ~ 3분 미만";
+        } else if (step4_2[2] === 1) {
+          tempStrCost = 3700000;
+          tempStr2 = "3 ~ 4분 미만";
+        } else if (step4_2[3] === 1) {
+          tempStrCost = 4300000;
+          tempStr2 = "4분 초과";
+        }
+        tempStr = "홍보영상";
+      } else if (step4_1["interview"] === true) {
+        if (step4_2[0] === 1) {
+          tempStrCost = 700000;
+          tempStr2 = "1분 미만";
+        } else if (step4_2[1] === 1) {
+          tempStrCost = 1600000;
+          tempStr2 = "1 ~ 3분 미만";
+        } else if (step4_2[2] === 1) {
+          tempStrCost = 2400000;
+          tempStr2 = "3 ~ 4분 미만";
+        } else if (step4_2[3] === 1) {
+          tempStrCost = 3500000;
+          tempStr2 = "4분 초과";
+        }
+        tempStr = "인터뷰 영상";
+      }
+
+      temp.querySelector("#se-result > div:nth-child(1)").textContent = tempStr;
+      temp.querySelector("#se-result > div:nth-child(2)").textContent =
+        tempStr2;
+
+      let tempStr3 = "";
+      let tempStr3Cost = 0;
+      if (step4_3[0] === 1) {
+        tempStr3 += "기획 및 콘티 제작";
+        tempStr3Cost += 800000;
+      } else if (step4_3[1] === 1) {
+        tempStr3 += "배우 / 성우 섭외";
+        tempStr2Cost += 900000;
+      } else if (step4_3[2] === 1) {
+        tempStr3 += "헤어 메이크업";
+        tempStr3Cost += 900000;
+      }
+      temp.querySelector("#se-result > div:nth-child(3)").textContent =
+        tempStr3;
+
+      let delNode_result = temp.querySelector("#se-result > div:nth-child(4)");
+      delNode_result.parentNode.removeChild(delNode_result);
+
+      console.log(temp);
+
+      //행사 가격 계산
+      let _result = tempStr3Cost;
+      console.log("행사가격", _result);
+
+      temp.querySelector("#gc-text > div:nth-child(2)").textContent = _result;
+
+      return temp;
+    };
+
+    MakeCostNode4_4();
+
+    let $step_four = [
+      MakeLayout(
+        [
+          "http://drive.google.com/uc?export=view&id=1tgW0E1XiTbHLlEv0GbKQGNHmgNj5UGKh",
+          "http://drive.google.com/uc?export=view&id=19fVuV5020EStrzS1ElsIDe85FDXr9fVR",
+        ],
+        ["홍보영상", "인터뷰영상"]
+      ),
+      MakeLayoutWatch(),
+      MakeLayoutChk(),
+    ];
 
     //next Button
     const onClickNext = (e) => {
@@ -1023,13 +1339,14 @@
 
       let currentIdx = stepSeires.indexOf(currentStep);
       console.log(currentIdx);
+
       if (currentPhase === phase[0] && currentStep === stepSeires[4]) {
         return;
-      }
-      if (currentPhase === phase[1] && currentStep === stepSeires[5]) {
+      } else if (currentPhase === phase[1] && currentStep === stepSeires[5]) {
         return;
-      }
-      if (currentPhase === phase[2] && currentStep === stepSeires[4]) {
+      } else if (currentPhase === phase[2] && currentStep === stepSeires[4]) {
+        return;
+      } else if (currentPhase === phase[3] && currentStep === stepSeires[4]) {
         return;
       }
 
@@ -1047,24 +1364,52 @@
           $step_two[currentIdx - 1].style.display = "none";
           $step_two[currentIdx].style.display = "block";
         } else if (currentPhase === phase[2]) {
+          console.log(currentIdx);
           $step_three[currentIdx - 1].style.display = "none";
-          $step_three[currentIdx].style.display = "block";
+          if (!$step_three[currentIdx]) {
+          } else {
+            $step_three[currentIdx].style.display = "block";
+          }
+        } else if (currentPhase === phase[3]) {
+          console.log(currentIdx);
+
+          if (currentIdx === 3) {
+            $step_four.push(MakeCostNode4_4());
+            step4_costFlag = true;
+          }
+
+          let _target = document.querySelector(".c_m_container");
+
+          console.log($step_four[currentIdx]);
+          const $ShouldDel = document.querySelector(".tempImgLayoutNode");
+          $ShouldDel.parentNode.removeChild($ShouldDel);
+          if (currentIdx === 2) {
+            $step_four[currentIdx].style.display = "flex";
+          } else {
+            $step_four[currentIdx].style.display = "block";
+          }
+
+          _target.appendChild($step_four[currentIdx]);
+          stepFourTempFlag = true;
         }
       }
+      console.log(currentPhase, phase[2], currentIdx);
       if (currentIdx === 3 && currentPhase === phase[0]) {
         document.querySelector(".c_main > .c_m_container > #step").textContent =
           "RESULT";
         SeResult();
-      }
-      if (currentIdx === 4 && currentPhase === phase[1]) {
+      } else if (currentIdx === 4 && currentPhase === phase[1]) {
         document.querySelector(".c_main > .c_m_container > #step").textContent =
           "RESULT";
         SeResult2();
-      }
+      } else if (currentIdx === 3 && currentPhase == phase[2]) {
+        document.querySelector(".c_main > .c_m_container > #step").textContent =
+          "RESULT";
+        let _target = document.querySelector(".c_m_container");
+        _target.appendChild(MakeCostNode(currentPhase));
 
-      console.log(currentPhase, phase[2], currentIdx);
-      if (currentIdx === 3 && currentPhase == phase[2]) {
-        console.log("3111111111111페");
+        console.log(MakeCostNode(currentPhase));
+        tempFlag = true;
       }
     };
     const $nextBtn = document.querySelector("#nextBtn a");
