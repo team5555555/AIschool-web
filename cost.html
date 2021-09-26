@@ -655,8 +655,8 @@
     // step1-1 2-1 2-4 3-2 func
     const onChangeInput = (e) => {
       e.preventDefault();
-      console.log(e);
-      console.log(e.path[2].getAttribute("id"));
+      //console.log(e);
+      //console.log(e.path[2].getAttribute("id"));
 
       let chkName = e.path[2].getAttribute("id");
       let chkName2 = e.path[1].getAttribute("id");
@@ -670,10 +670,10 @@
       } else {
         step1_1 = e.target.value;
       }
-      console.log(step3_2);
-      console.log(step2_4);
-      console.log(step2_1);
-      console.log(step1_1);
+      //console.log(step3_2);
+      //console.log(step2_4);
+      //console.log(step2_1);
+      //console.log(step1_1);
     };
 
     // check phase
@@ -711,7 +711,7 @@
         const $tempFour = document.querySelector(".tempImgLayoutNode");
         if (!$tempFour) {
         }
-        console.log($tempFour);
+        //console.log($tempFour);
         $tempFour.parentNode.removeChild($tempFour);
         stepFourTempFlag = false;
       }
@@ -726,7 +726,7 @@
       currentPhase = e.target.innerHTML;
       currentStep = stepSeires[1];
       //console.log(pastPhase, "과거");
-      console.log(currentStep, currentPhase);
+      //console.log(currentStep, currentPhase);
 
       if (currentPhase === phase[0]) {
         chkPhase(pastPhase);
@@ -912,12 +912,12 @@
           step2_3["X"] = false;
         }
       }
-      console.log(step2_3);
+      //console.log(step2_3);
     };
 
     const onChangeInput2_3 = (e) => {
       step2_3["count"] = e.target.value;
-      console.log(step2_3["count"]);
+      //console.log(step2_3["count"]);
     };
 
     $step_two[2]
@@ -990,7 +990,7 @@
           step3_1["movie"] = false;
         }
       }
-      console.log(step3_1);
+      //console.log(step3_1);
     };
 
     $step_three[0].querySelectorAll("input").forEach((bundle) => {
@@ -1060,7 +1060,7 @@
         );
         delNode_result.parentNode.removeChild(delNode_result);
 
-        console.log(temp);
+        //console.log(temp);
 
         //행사 가격 계산
         let _result;
@@ -1069,8 +1069,8 @@
         } else if (tempStrCost === 150000) {
           _result = tempStrCost * parseInt(step3_2) + tempStr2Cost + 600000;
         }
-        console.log("행사가격", _result);
-        console.log(tempStr2Cost, step3_2, tempStrCost);
+        //console.log("행사가격", _result);
+        //console.log(tempStr2Cost, step3_2, tempStrCost);
         if (!_result) {
           _result = 0;
         }
@@ -1144,7 +1144,7 @@
         tempDiv.style.alignItems = "center ";
 
         tempChk.addEventListener("change", (e) => {
-          console.log(e.target.checked);
+          //console.log(e.target.checked);
 
           if (e.target.checked) {
             step4_2[_list.indexOf(e.target.name)] = 1;
@@ -1153,12 +1153,12 @@
             if (isTwo > 1) {
               step4_2[_list.indexOf(e.target.name)] = 0;
               tempChk.checked = false;
-              console.log(e.target.checked);
+              //console.log(e.target.checked);
             }
           } else {
             step4_2[_list.indexOf(e.target.name)] = 0;
           }
-          console.log(step4_2);
+          //console.log(step4_2);
         });
         tempDivContainer.appendChild(tempDiv);
       }
@@ -1166,7 +1166,7 @@
       temp.appendChild(tempDivContainer);
       temp.querySelector(".tempCon").style.display = "flex";
 
-      console.log(temp);
+      //console.log(temp);
 
       return temp;
     };
@@ -1223,7 +1223,7 @@
               step4_3[2] = 0;
             }
           }
-          console.log(step4_3);
+          //console.log(step4_3);
         });
       }
       tempDivContainer.style.display = "flex";
@@ -1307,11 +1307,11 @@
       let delNode_result = temp.querySelector("#se-result > div:nth-child(4)");
       delNode_result.parentNode.removeChild(delNode_result);
 
-      console.log(temp);
+      //console.log(temp);
 
       //행사 가격 계산
       let _result = tempStr3Cost;
-      console.log("행사가격", _result);
+      //console.log("행사가격", _result);
 
       temp.querySelector("#gc-text > div:nth-child(2)").textContent = _result;
 
@@ -1335,10 +1335,10 @@
     //next Button
     const onClickNext = (e) => {
       e.preventDefault();
-      console.log(currentPhase, currentStep);
+      //console.log(currentPhase, currentStep);
 
       let currentIdx = stepSeires.indexOf(currentStep);
-      console.log(currentIdx);
+      //console.log(currentIdx);
 
       if (currentPhase === phase[0] && currentStep === stepSeires[4]) {
         return;
@@ -1364,14 +1364,14 @@
           $step_two[currentIdx - 1].style.display = "none";
           $step_two[currentIdx].style.display = "block";
         } else if (currentPhase === phase[2]) {
-          console.log(currentIdx);
+          //console.log(currentIdx);
           $step_three[currentIdx - 1].style.display = "none";
           if (!$step_three[currentIdx]) {
           } else {
             $step_three[currentIdx].style.display = "block";
           }
         } else if (currentPhase === phase[3]) {
-          console.log(currentIdx);
+          //console.log(currentIdx);
 
           if (currentIdx === 3) {
             $step_four.push(MakeCostNode4_4());
@@ -1380,7 +1380,7 @@
 
           let _target = document.querySelector(".c_m_container");
 
-          console.log($step_four[currentIdx]);
+          //console.log($step_four[currentIdx]);
           const $ShouldDel = document.querySelector(".tempImgLayoutNode");
           $ShouldDel.parentNode.removeChild($ShouldDel);
           if (currentIdx === 2) {
@@ -1393,7 +1393,7 @@
           stepFourTempFlag = true;
         }
       }
-      console.log(currentPhase, phase[2], currentIdx);
+      //console.log(currentPhase, phase[2], currentIdx);
       if (currentIdx === 3 && currentPhase === phase[0]) {
         document.querySelector(".c_main > .c_m_container > #step").textContent =
           "RESULT";
@@ -1408,7 +1408,7 @@
         let _target = document.querySelector(".c_m_container");
         _target.appendChild(MakeCostNode(currentPhase));
 
-        console.log(MakeCostNode(currentPhase));
+        //console.log(MakeCostNode(currentPhase));
         tempFlag = true;
       }
     };
