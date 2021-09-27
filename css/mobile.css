@@ -57,6 +57,7 @@
 	}
 	#footer {
 		/*height: 150px;*/
+		overflow: unset;
 	}
 	#footer .F_container {
 		/*height: 150px;*/
@@ -107,6 +108,9 @@
 
 	#main {
 
+	}
+	#main .about_bg {
+		margin-bottom: 10px;
 	}
 	.nav {
 		width: 100%;
@@ -342,12 +346,167 @@
     	margin: 0 5px;
     	background-color: #f2f2f2;
 	}
+	/* 예상견적 */
+
+	.c_m_container img {
+		padding-bottom: 5px;
+	}
+	#step1-1 img {
+		width: 18em !important;
+	}
+	#step1-2 img {
+		width: 18em !important;
+	}
+	#step1-4 > div {
+		flex-wrap: wrap !important;
+		margin-top: 10px !important;
+	}
+	#send-email {
+		margin-right: 0 !important;
+		padding: 0 60px !important;
+	}
+	#get-cur {
+		margin-left: 0 !important;
+		padding: 35px 60px !important;
+	}
+	#step2-1 div {
+		justify-content: center !important;
+    	align-items: center !important;
+    	display: flex !important;
+	}
+	#step2-1 img {
+		width: 100% !important;
+		height: 90% !important;
+	}
+	#step2-2 {
+		width: 100%;
+	}
+	#step2-2 > div, #step3-3 > div {
+		margin-top: 150px !important;
+		flex-wrap: wrap !important;
+	}
+
+	#step2-2 > div > div:nth-child(1), #step2-2 > div > div:nth-child(2), #step3-3 > div > div:nth-child(1), #step3-3 > div > div:nth-child(2) {
+		content: none !important;
+		/*border-right: none !important;*/
+		padding-right: 0 !important;
+		padding-left: 20px !important;
+
+	}
+	#step2-2 div {
+		padding: 0 2px !important;
+	}
+
+	#step2-2 > div > div, #step3-3 > div > div {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+	#step2-2 input {
+		width: 100% !important;
+	}
+
+	#step2-3 #_O div {
+		font-size: 10rem !important;
+    	padding-left: 0 !important;
+    	padding-right: 0 !important;
+    	padding: 0 25px !important;
+		border-right: 2.5px solid black !important;
+
+	}
+
+	#step2-3 #_X div {
+		font-size: 10rem !important;
+    	padding-left: 0 !important;
+    	padding-right: 0 !important;
+    	padding: 0 25px !important;
+	}
+	#step2-3 > div:nth-child(3) {
+		display: flex !important;
+		align-items: center !important;
+    	justify-content: center !important;
+	}
+	#step2-3 > div:nth-child(3) input {
+		margin-left: 0 !important;
+	}
+	#step2-4 img {
+		width: 18rem !important;
+    	height: 18rem !important;
+	}
+	#step2-5 > div {
+		flex-wrap: wrap !important;
+		margin-top: 2rem !important;
+	}
+	#step3-1 {
+		/*display: flex !important;*/
+    	flex-wrap: wrap !important;
+    	justify-content: center !important;
+	}
+	#step3-1 img {
+		width: 18rem !important;
+    	height: 9.5rem !important;
+	}
+	#step3-1 div span {
+		margin: 7px 0 !important;
+
+	}
+	#step3-1 > div:nth-child(1) {
+		margin-right: 0 !important;
+	}
+	#step3-1 > div:nth-child(2) {
+		margin-left: 0 !important;
+	}
+	#step3-2 img {
+		width: 18rem !important;
+    	height: 18rem !important;
+	}
+	#step3-3 div {
+		padding: 0px 0px;
+	}
+	#step3-3 div div {
+		padding-left: 10px !important;
+	}
+	#step3-2 .tempCon {
+		font-size: 12px !important;
+	}
+	#step3-2 .tempCon div {
+		display: flex !important;
+    	flex-direction: column !important;
+    	margin-top: 0.5rem !important;
+    	margin-left: 10px !important;
+    	text-align: center !important;
+    	align-items: center !important;
+	}
+	#step4-3 {
+		flex-wrap: wrap !important;
+    	justify-content: center !important;
+    	margin-top: 13% !important;
+	}
+	#step4-3 img {
+		width: 100% !important;
+		height: 7em !important;
+	}
+	#step4-3 > div:nth-child(1) > img, #step4-3 > div:nth-child(2) > img {
+		border-right: none !important;
+
+	}
 
 
 
 
 
 
+	#nextBtn {
+		padding-top: 20px !important;
+    	padding-right: 0 !important;
+    	padding-bottom: 0 !important;
+    	align-items: center !important;
+    	justify-content: center !important;
+
+	}
+	#nextBtn div {
+		margin-right: 0 !important;
+		margin-bottom: 15px !important;
+	}
 
 
 
