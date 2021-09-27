@@ -480,11 +480,11 @@
 	}
 	#step4-3 {
 		flex-wrap: wrap !important;
-    	justify-content: center !important;
+    	justify-content: space-around !important;
     	margin-top: 13% !important;
 	}
 	#step4-3 img {
-		width: 100% !important;
+		width: 100px !important;
 		height: 7em !important;
 	}
 	#step4-3 > div:nth-child(1) > img, #step4-3 > div:nth-child(2) > img {
