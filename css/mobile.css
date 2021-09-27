@@ -400,6 +400,7 @@
 	#step2-2 > div > div, #step3-3 > div > div {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
+		justify-content: space-around !important;
 	}
 	#step2-2 input {
 		width: 100% !important;
