@@ -384,6 +384,7 @@
 	#step2-2 > div, #step3-3 > div {
 		margin-top: 150px !important;
 		flex-wrap: wrap !important;
+		justify-content: space-around !important;
 	}
 
 	#step2-2 > div > div:nth-child(1), #step2-2 > div > div:nth-child(2), #step3-3 > div > div:nth-child(1), #step3-3 > div > div:nth-child(2) {
@@ -400,7 +401,7 @@
 	#step2-2 > div > div, #step3-3 > div > div {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
-		justify-content: space-around !important;
+		
 	}
 	#step2-2 input {
 		width: 100% !important;
